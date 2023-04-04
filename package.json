@@ -3,13 +3,29 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "sst bind astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "sst:deploy": "sst deploy",
+    "sst:dev": "sst dev"
   },
   "dependencies": {
-    "astro": "^2.1.9"
+    "@astrojs/mdx": "^0.18.2",
+    "@astrojs/tailwind": "^3.1.1",
+    "@astrojs/vue": "^2.1.0",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "astro": "^2.1.9",
+    "astro-rome": "^0.1.11",
+    "tailwindcss": "^3.3.1",
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "astro-sst": "^2.3.6",
+    "aws-cdk-lib": "2.62.2",
+    "constructs": "10.1.156",
+    "sst": "^2.3.6"
   }
 }

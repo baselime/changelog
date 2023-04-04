@@ -1,0 +1,123 @@
+---
+import { CollectionEntry, getEntryBySlug } from "astro:content";
+
+export interface Props {
+    changelog: CollectionEntry<"changelog">;
+}
+
+const { changelog } = Astro.props;
+
+const author = await getEntryBySlug("author", changelog.data.author.id);
+---
+
+<div class="changelog">
+    <section class="max-w-2xl mx-auto mb-8 px-4 md:px-0">
+        <div
+            class="px-0 mx-auto sm:mt-24 sm:px-0 flex flex-col justify-center gap-8 py-8 md:py-0 xl:px-0"
+        >
+            <a href={import.meta.env.BASE_URL + "slug/" + changelog.slug} ><h1
+                    class="text-l-g-6 text-h-sm-s md:text-h-lg-s xl:text-h-xl-s"
+                >
+                    {changelog.data.title}
+                </h1>
+            </a>
+            <div class="w-full">
+                <div>
+                    <div
+                        class="md:flex item-center justify-between w-full mb-4"
+                    >
+                        <div>
+                            <div class="author text-l-g-6 position">
+                                <div
+                                    class="flex-shrink-0 inline-flex rounded-full overflow-clip h-10 w-10"
+                                >
+                                    <img
+                                        src={import.meta.env.BASE_URL + author?.data.image}
+                                        alt="Author"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div>
+                                    <div class="name">{author?.data.name}</div>
+                                    <div class="position text-l-g-9">
+                                        {author?.data.position}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-l-g-9">
+                            {new Date(changelog.data.date).toDateString()}
+                        </div>
+                    </div>
+                    <div class="text-l-g-6 text-b-md-r md:text-b-lg-r">
+                        {changelog.data.description}
+                    </div>
+                </div>
+            </div>
+            <img
+                class="rounded-xl cover"
+                src={import.meta.env.BASE_URL + changelog.data.cover}
+                alt="Cover for Changelog"
+            />
+        </div>
+    </section>
+    <slot />
+</div>
+
+<style>
+    .changelog :global(h2) {
+        margin: 3rem 0 1.5rem;
+        font-size: 1.8rem;
+        color: #35363a;
+        font-weight: 600;
+    }
+
+    .changelog :global(h3) {
+        margin: 1.5rem 0 1rem;
+        font-size: 1.4rem;
+        color: #35363a;
+        font-weight: 600;
+    }
+
+    .changelog :global(p) {
+        margin: 0 0 20px;
+        color: #47484d;
+    }
+
+    .changelog :global(a) {
+        text-decoration: none;
+        color: #94d32e;
+        border-bottom: 2px solid transparent;
+        transition: 0.15s;
+    }
+
+    .changelog :global(ul) {
+        list-style-type: circle;
+        margin: 0 0 30px;
+        padding: 0;
+        color: #47484d;
+    }
+
+    .changelog :global(li) {
+        margin: 5px 60px;
+    }
+
+    .changelog :global(code) {
+        color: #5577eb;
+        background: #f6f7fb;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-family: "Monaco", monospace;
+    }
+
+    .changelog :global(a:hover) {
+        border-bottom: 2px solid #94d32e;
+    }
+
+    .cover {
+        width: 100%;
+        max-height: 580px;
+        object-fit: cover;
+    }
+</style>

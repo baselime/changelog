@@ -1,0 +1,35 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ChangelogLayout from "../../layouts/ChangelogLayout.astro";
+import ArticleImage from '../../components/article-image.astro'
+import Next from "../../components/next.astro";
+import { getCollection } from "astro:content";
+const page = Number(Astro.params.page) || 0;
+
+const changelog = await getCollection("changelog");
+
+const first = changelog.sort((a,b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(page * 3, page * 3 + 3);
+
+const highlightedChangelogs = await Promise.all(
+    first.map(async (el) => ({ data: el, Post: await el.render() }))
+);
+---
+
+<Layout title="Baselime">
+    {
+        first.length ? (
+            <>
+                <span>
+                    {highlightedChangelogs.map(({ data, Post }) => (
+                        <ChangelogLayout changelog={data}>
+                            <Post.Content />
+                        </ChangelogLayout>
+                    ))}
+                </span>
+                <Next next={page + 1} />
+            </>
+        ) : (
+            <ArticleImage src="/before.webp" alt="Queen Liz DJ" title="A time before Baselime" source="https://www.reddit.com/r/midjourney/comments/129232x/queen_elizabeth_ii_side_hustle/"/>
+        )
+    }
+</Layout>

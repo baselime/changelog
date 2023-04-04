@@ -1,0 +1,16 @@
+---
+export interface Props {
+    next: number
+}
+const next = Astro.props.next
+---
+<div class="w-full my-6" >
+    <a href={import.meta.env.BASE_URL + 'page/' + next}
+        class="border border-transparent flex items-center justify-center gap-2 transition-all bottom-0 hover:bottom-0.5 py-4 md:py-3 px-8 rounded-xl text-b-md-s bg-l-g-5"
+        ><div
+            class="flex justify-center items-center whitespace-nowrap  text-l-g-10"
+        >
+                <div >Load more</div>
+        </div></a
+    >
+</div>

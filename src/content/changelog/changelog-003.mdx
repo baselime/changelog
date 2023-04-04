@@ -1,0 +1,97 @@
+---
+title: "Changelog #003"
+description: New Onboarding, API Gateway Logs Connector and CloudFormation Stacks Autodiscovery.
+cover: changelog-003.png
+alt: "Changelog #003"
+featured: true
+date: 2022-11-10
+published: true
+author:
+  id: boris-tane
+  name: Boris Tane
+tags: 
+  - product-update
+  - changelog
+---
+import ArticleImage from '../../components/article-image.astro'
+
+## TL;DR
+
+- A brand new onboarding flow ✨
+- A connector to add API Gateway logs to your observability toolkit
+- Automatic discovery of your CloudFormation stacks as applications
+- Interactivity everywhere, to empower you to explore your telemetry data and troubleshoot your systems faster
+- Improved alerts in Slack, the integration recognises identical alerts and groups them into threads
+- And much more…
+
+Connect with other devs in our [Slack community](https://join.slack.com/t/baselimecommunity/shared_invite/zt-1hea7g9uu-z69IghjEqPqD4P0rRlEQVw) and be the first to know when we ship something new. You’ll benefit from and participate in all the serverless and observability chat happening there.
+
+## 💯 What’s New?
+
+### New Onboarding Flow
+
+We’ve been working with developers in our closed beta and we’ve drastically improved our onboarding flow after identifying a few bottlenecks. It’s now a clear three step flow followed by incremental exposure to functionalities as they become relevant to you. We’ve also added videos to walk you through the relevant sections. 
+
+<ArticleImage   src={import.meta.env.BASE_URL + "changelog-003/onboarding.png"}  alt="New Onboarding Flow" title="" source="">
+</ArticleImage>
+
+
+### API Gateway Logs Connector
+
+Baselime now automatically ingests telemetry data from Amazon API Gateway. API Gateway is a central piece of most serverless applications yet is particularly difficult to troubleshoot when defects arise. When your API Gateway logs land in Baselime, you can run arbitrary complex queries on them, set up alerts, and investigate with Observability as Code (OaC).
+
+Don’t worry if your API Gateway logs are not fully structured, our parsers will transform them such that you can dive in without any code changes.
+
+If you don’t have your API Gateway logs enabled yet, join our [Slack community](https://join.slack.com/t/baselimecommunity/shared_invite/zt-1hea7g9uu-z69IghjEqPqD4P0rRlEQVw). We’re sure one of our community members will answer all your questions and help you enable them.
+
+<ArticleImage   src={import.meta.env.BASE_URL + "changelog-003/apigateway.png"}  alt="API Gateway Logs connector" title="An example API Gateway log on Baselime" source="">
+</ArticleImage>
+
+
+### Automatic Discovery of your CloudFormation Stacks
+
+Signing up for a new service and being left with a black screen can be daunting. We give you the option to automatically import all your CloudFormation stacks as individual applications on Baselime. This means you can start with a set of applications, dive right into exploring your telemetry data and set up your Observability as Code.
+
+<ArticleImage   src={import.meta.env.BASE_URL + "changelog-003/import.png"}  alt="Automatic Discovery of your CloudFormation Stacks" title="" source="">
+</ArticleImage>
+
+### Interactivity, Everywhere.
+
+You already knew that every chart on [Baselime](https://baselime.io) was interactive, but did you know that everything else, from query results in tables to events, is also interactive?
+
+And as a bonus, we added a button to every event so that you can quickly view the other events from the same invocation.
+
+Anything can be a starting point to dig deeper.
+
+<ArticleImage   src={import.meta.env.BASE_URL + "changelog-003/interactive.png"}  alt="Interactivity, Everywhere." title="From any event, you can filter results by any value, search for any value, or group by any key or nested key" source="">
+</ArticleImage>
+
+### Improved alerts in Slack
+
+We’ve seen a significant uptick in alerts being investigated when delivered over Slack so we doubled down on this.
+
+Now, when an alert with the same cause triggers multiple times within 24 hours, the Baselime Slack app will respond in a thread in order to mitigate alert fatigue. Moreover, anyone in your team can start troubleshooting the alert or pause it whilst you’re troubleshooting directly from the alert page. Our Slack app will send messages in the thread to keep everyone updated on the status of the incident.
+
+Moreover, when appropriate, we add the event that triggered the alert right in the alert message so you have the all-important full context before your start investigating the defect :).
+
+<ArticleImage   src={import.meta.env.BASE_URL + "changelog-003/slack.png"}  alt="Improved alerts in Slack" title="" source="">
+</ArticleImage>
+
+
+## 🎯 What’s Next?
+
+- **CloudWatch Metrics Connector:** Logs and events are great, but sometimes, you need to know the number of messages in your SQS dead-letter queue to spot a defect. We’re working on bringing CloudWatch metrics into Baselime
+- **Continuous Observability:** observability should not be stuck at the defects troubleshooting stage. We are working on bringing the powers of Observability as Code (OaC) to your CI/CD pipelines
+- **More templates:** Now that we have a wide set of telemetry data sources, we are working on developing a set of best-practice templates such that you never start from scratch when observing a new service.
+
+## 👨‍💻 Hiring
+
+We’re still a small team and we’re looking for talented people to join our distributed team:
+
+- [Software engineer (Front-end)](https://www.notion.so/Software-Engineer-Front-end-7bce84e54e30428dacfad803c2932eec)
+
+If you want to work on building a product with the potential to change the way software is written in the future, it's the perfect time to join us!
+
+That’s it for today! Let’s make Observability as Code the new norm!
+
+If you’d want to give Baselime a try, [just let us know](https://join.slack.com/t/baselimecommunity/shared_invite/zt-1eu7l0ag1-wxYXQV6Fr_aiB3ZPm3LhDQ), and we’ll help you get set up!

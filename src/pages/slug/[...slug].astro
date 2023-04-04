@@ -1,0 +1,23 @@
+---
+import { getEntryBySlug } from 'astro:content'
+import Layout from "../../layouts/Layout.astro";
+import ChangelogLayout from '../../layouts/ChangelogLayout.astro'
+const { slug } = Astro.params;
+if (slug === undefined) {
+  throw new Error("Slug is required");
+}
+
+const changelogEntry = await getEntryBySlug('changelog', slug);
+
+if (changelogEntry === undefined) {
+  return Astro.redirect("/404");
+}
+
+const { Content } = await changelogEntry.render();
+---
+
+<Layout title="Baselime">
+    <ChangelogLayout changelog={changelogEntry}>
+        <Content></Content>
+    </ChangelogLayout>
+</Layout>

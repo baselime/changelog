@@ -1,0 +1,84 @@
+---
+title: "Changelog #001"
+description: So much has happened since our last update. We welcomed more teams on our private beta and we’ve been iterating based on the valuable feedback we received.
+cover: changelog-001.png
+alt: "Changelog #001"
+featured: false
+date: 2022-09-01
+published: true
+author:
+  id: boris-tane
+  name: Boris Tane
+tags: 
+  - product-update
+  - changelog
+---
+import ArticleImage from '../../components/article-image.astro'
+
+## 💯 What’s New?
+
+### Slack Integration
+
+Best-in-class observability is collaborative, so we built a [Slack app](https://baselime.slack.com/apps/A03U3KEAM29-baselime?tab=more_info) to facilitate collaboration on observability and telemetry data. 
+
+Typically, observability providers use Slack integrations as sinks where notifications are pushed. At Baselime, we consider Slack to be an input stream too. You can easily [run queries on your telemetry data within Slack](https://docs.baselime.io/integrations/slack/commands/) directly, just as you would with the Baselime CLI. This makes it easier to answer your teammates’ questions, actively collaborate and make data-driven decisions. 
+
+- Receive context-rich alerts in Slack
+- Run queries on your telemetry data without leaving Slack
+- Directly link to the Baselime console to dive deeper into your data with a single click
+
+
+<ArticleImage src={import.meta.env.BASE_URL + 'changelog-001/queries.png'}  alt="Slack queries" title="" source="">
+</ArticleImage>
+
+### Templates
+
+We pushed the first iteration of [Baselime templates](https://docs.baselime.io/cli/reference/init/), which are sets of queries, alerts and dashboards that can be used to easily initialise a new application on Baselime. Instead of starting from scratch, select one of our templates and get just-in-time Observability as Code (OaC). 
+
+- Use templates to quickly initialise your applications
+- Use template variables to define properties specific to your team and applications, such as the lambda functions within the application or slack channels you want to receive alerts in
+- Extend your templates by adding observability resources (queries, alerts, etc.)
+
+### Alert Webhooks
+
+We launched the [Baselime webhooks](https://docs.baselime.io/integrations/webhooks/overview/). Now you can build powerful custom processes that react to alerts in your serverless architecture in real-time. Incident management, self-healing systems, runbooks, etc. all automated.
+
+- Add webhooks as channels where alerts are pushed
+- Receive context-rich details about the alert in the webhook payload
+- Be creative and build cool custom processes that trigger when an alert is triggered
+
+<ArticleImage  src={import.meta.env.BASE_URL + "changelog-001/webhooks.png"} alt="Baselime webhooks" title="" source="">
+</ArticleImage>
+
+### New commands
+
+We’re continuously improving our CLI and added the following commands:
+
+- `baselime plan` : [creates an execution plan](https://docs.baselime.io/cli/reference/plan/), which lets you preview the changes that Baselime intends to make to your observability configurations
+- `baselime destroy` : [destroys previously created observability resources](https://docs.baselime.io/cli/reference/destroy/)  
+
+### Auto-complete in the web browser console editor
+
+We know YAML is not the most fun language to write, so we made it easier to write your Observability as Code in the browser. With powerful autocomplete powered with your telemetry data, you won’t have to guess if your events were `event_name` or `eventName` anymore!
+
+<ArticleImage  src={import.meta.env.BASE_URL + "changelog-001/autocomplete.png"}  alt="Autocomplete" title="" source="">
+</ArticleImage>
+
+## 🎯 What’s Next?
+
+- **CloudTrail Connector:** We’re going beyond the application layer to the infrastructure layer. Our upcoming CloudTrail connector will empower you to ship your CloudTrail logs to Baselime and use OaC to define queries, alerts and dashboards on all changes in your infrastructure.
+- **VS-Code Extension:** We’re building on the learnings of implementing autocomplete in the browser console to bring it to your IDE with a VS-Code extension.
+- **Enhanced inline search and filtering:** You’re not always looking to make calculations on your telemetry data, sometimes all you want to do is search for a `userId` or all user ids matching a specific regular expression. We’re building enhanced search and filtering capabilities in Baselime, both in the browser console and through the CLI.
+
+## 👨‍💻 Hiring
+
+As the community grows, we’re looking for talented people to join our small distributed team:
+
+- [Software engineer (Full-stack)](https://www.notion.so/c6b937dad7594059a7662dbc45e0f88f)
+- [Software engineer (Front-end)](https://www.notion.so/7bce84e54e30428dacfad803c2932eec)
+
+If you want to work on building a product with the potential to change the way software is written in the future, it's the perfect time to join us!
+
+That’s it for today! Let’s make Observability as Code the new norm!
+
+If you’d want to give Baselime a try, [just let us know](https://join.slack.com/t/baselimecommunity/shared_invite/zt-1eu7l0ag1-wxYXQV6Fr_aiB3ZPm3LhDQ), and we’ll help you get set up!

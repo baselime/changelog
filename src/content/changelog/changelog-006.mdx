@@ -1,0 +1,111 @@
+---
+title: "Changelog #006"
+description: Service discovery, dashboards, reliability and much more... 
+cover: changelog-006.png
+alt: "Changelog #006"
+featured: true
+date: 2023-03-10
+published: true
+author:
+  id: boris-tane
+  name: Boris Tane
+tags: 
+  - product-update
+  - changelog
+---
+import ArticleImage from '../../components/article-image.astro'
+
+## TL;DR
+
+- ✨ Dashboards ✨
+- We shipped service discovery in preview
+- We added 40+ example queries to help you answer common questions about your serverless architecture
+- A considerable amount of effort went into reliability 💻
+- We improved Slack alerts
+- We simplified the query and visual builders
+- And much more…
+
+We update our community on Slack as soon as any of these are in preview. Join the devs in our [Slack community](https://join.slack.com/t/baselimecommunity/shared_invite/zt-1hea7g9uu-z69IghjEqPqD4P0rRlEQVw) so you never miss anything.
+
+## 💯 What’s New?
+
+### Dashboards
+
+Dashboards are the easiest way to share a collection of queries with your team, and the first step to help you achieve two of your main goals:
+- quickly answer the question "are my systems healthy?"
+- put together a set of queries for post-mortems or runbooks 
+
+The beauty of Baselime Dashboards is that you can add different views of a query to any dashboard. For example, you can add views for calculations, for events or for traces to your dashboard. 
+
+{/* <div style="margin-bottom: 30px">
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/IaJVCTEELfg' frameborder='0' allowfullscreen></iframe></div>
+</div> */}
+
+We also keep a history of dashboard views so you can keep track and go back to review the state of a dashboard at a specific point in time. You can even share it with your team!
+
+### Service Discovery Preview
+
+Your serverless architecture is typically organised in multiple services and yet this context is lost in most observability solutions. This makes it difficult to query your telemetry data appropriately within the context of a service or set alerts for a single service.
+
+So far, CloudFormation stacks could be used to manually set the boundaries of your [services](https://docs.baselime.io/concepts/#services) on Baselime.
+
+We've launched automatic service discovery in preview to developers currently on Baselime. Automatic service discovery relies on your services being deployed using CloudFormation, it understands the deployment framework your team uses (CDK, Serverless Framework, SST, etc.) and can isolate telemetry data from each service at ingestion time.
+
+<ArticleImage   src={import.meta.env.BASE_URL + "changelog-006/discovered-services.png"}  alt="Discovered services" title="Discovered services" source="">
+</ArticleImage>
+
+When you run a query from within a service, you're querying data for this service only. It's fast, blazing fast.
+
+For queries spanning multiple services, you can always query all the telemetry data across your architecture.
+
+### Query Examples
+
+No more starting with a blank page. We're building a library of common questions you might have about your serverless architecture. From slow queries to DynamoDB throttles, examples give you a starting point in understanding the emerging behaviour of your systems.
+
+<ArticleImage   src={import.meta.env.BASE_URL + "changelog-006/query-examples.png"}  alt="Query examples" title="Baselime Query Examples" source="">
+</ArticleImage>
+
+The query examples are [open-sourced](https://github.com/Baselime/templates). Want to add a new set of examples? Let us know on [Slack](https://join.slack.com/t/baselimecommunity/shared_invite/zt-1hea7g9uu-z69IghjEqPqD4P0rRlEQVw).
+
+
+### Reliability
+
+We also have a distributed serverless architecture running on AWS, and as is the case for your team, reliability is always top of mind. We invested considerable amount of time in:
+- Scalability of X-Ray traces ingestion
+- Data replication for our ClickHouse clusters
+- Disaster Recovery
+
+And many more continuous improvement items...
+
+
+### Improved Slack alerts
+
+A few things are important to know at first glance when you receive an alert:
+- What is this alert?
+- Where is it coming from?
+- What values triggered it?
+- How long has this been going on?
+
+We improved our Slack alerts to provide all this information immediately, within Slack, without leaving your current context.
+
+<ArticleImage   src={import.meta.env.BASE_URL + "changelog-006/slack-alerts.png"}  alt="Improved Slack alerts" title="Improved Slack alerts" source="">
+</ArticleImage>
+
+
+
+## 🎯 What’s Next?
+
+- **More templates and examples** so you can get started with as little friction as possible
+- **Improved events table** to facilitate navigating the results of a query.
+- **Service Discovery Beta** launching for new developers on Baselime.
+- **Linked Metrics:** currently, you can link your logs to your traces - how about your metrics?
+
+## 👨‍💻 Hiring
+
+We're looking for an exceptional front-end developer to help us build the future of observability:
+
+- [Software engineer (Front-end)](https://www.notion.so/Software-Engineer-Front-end-7bce84e54e30428dacfad803c2932eec)
+
+If this is you, the best time to join us was yesterday. The next best time is today!
+
+We look forward to welcoming you in our [Slack community](https://join.slack.com/t/baselimecommunity/shared_invite/zt-1eu7l0ag1-wxYXQV6Fr_aiB3ZPm3LhDQ). Let’s make Observability as Code the new norm!

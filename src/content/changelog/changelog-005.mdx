@@ -1,0 +1,109 @@
+---
+title: "Changelog #005 - We're live"
+description: You can sign up to Baselime today, no more waiting list. 
+cover: changelog-005.png
+alt: "Changelog #005"
+featured: true
+date: 2023-02-02
+published: true
+author:
+  id: boris-tane
+  name: Boris Tane
+tags: 
+  - product-update
+  - changelog
+---
+import ArticleImage from '../../components/article-image.astro'
+
+## TL;DR
+
+- Baselime is now in Public Beta, sign up today! ✨
+- AWS X-Ray traces can now be queried in Baselime, and used for alerting
+- We added support for OTel, send us your traces
+- We shipped the fastest [OTel tracer](https://github.com/Baselime/lambda-node-opentelemetry) for Node.js Lambda functions - star us 🌟
+- It's possible to correlate your CloudWatch Logs and X-Ray traces in Baselime, with no code changes.
+- We made a handful of [observability templates](https://docs.baselime.io/templates/overview/) to get you started
+- We revamped our Web Console
+- We simplified the vast majority of our CLI commands even further
+- We have a new [brand identity](https://baselime.io), we will be updating everything in the coming weeks
+- Our detailed pricing strategy is now unveiled 
+- And much more…
+
+We update our community on Slack as soon as any of these are in preview. Join the devs in our [Slack community](https://join.slack.com/t/baselimecommunity/shared_invite/zt-1hea7g9uu-z69IghjEqPqD4P0rRlEQVw) to never miss anything.
+
+## 💯 What’s New?
+
+Sign up to Baselime today [here](https://console.baselime.io). Read on for what we shipped this month.
+
+### XRay Traces
+
+Baselime now automatically ingests traces from AWS X-Ray. You can now use your traces for queries and and alerts. A common use case is to alert on failed DynamoDB operations for example. 
+
+<ArticleImage  src={import.meta.env.BASE_URL + "changelog-005/x-ray.png"}  alt="XRay Connector" title="An X-Ray trace in Baselime" source="">
+</ArticleImage>
+
+Moreover, you can correlate all your AWS Lambda logs with X-Ray traces, with no code changes. If the Lambda function is instrumented and sampled, you get this out of the box.
+
+<ArticleImage  src={import.meta.env.BASE_URL + "changelog-005/logs-trace.png"}  alt="Lambda ogs in XRay trace" title="The Lambda logs inside an X-Ray trace" source="">
+</ArticleImage>
+
+### OTel
+
+Yes, we know you want to use OpenTelemetry for your tracing, we got you covered.
+
+Not only will we ingest your OTel traces, we are also building the fastest and most lightweight OTel tracer for Node.js Lambda functions. Drop us a star on [Github](https://github.com/Baselime/lambda-node-opentelemetry)!
+
+<ArticleImage  src={import.meta.env.BASE_URL + "changelog-005/otel.png"}  alt="OTel traces" title="OTel Traces in Baselime" source="">
+</ArticleImage>
+
+Once in Baselime, your can explore your traces and use them as you would any other event in Baselime; set your configurations as code, run queries, define alerts, slice and dice in the CLI, etc.
+
+<ArticleImage  src={import.meta.env.BASE_URL + "changelog-005/scatter.png"}  alt="Scatter plots of traces" title="Scatter plots of traces in Baselime" source="">
+</ArticleImage>
+
+### Observability Templates
+
+For those who are not quite sure where to start with o11y for their serverless architectures, we're building our public library of observability templates. With these, you can select the sort of services you're building once your AWS account is connected to Baselime. Is it an API? Does it use SQS, or DynamoDB ? We're building extensive templates to get the best-in-class observability on those services.
+
+Pick your templates and start with the baseline observability you need. Once you're more familiar with how things work, dive deep and slice and dice your data at will.
+
+Our o11y templates are all open sourced and are accessible in [our docs](https://docs.baselime.io/templates/overview/) and on [GitHub](https://github.com/Baselime/templates) (Don't forget to star us 🌟).
+
+
+
+### Web Console and CLI
+
+Check out our new [console](https://console.baselime.io) and [CLI](https://docs.baselime.io/cli/install/). I'm sure you'll like them - we're looking forward to getting your feedback :) 
+
+
+### Pricing Strategy
+
+Common question, quite a few people asked us how we would be charging for Baselime while we were in private beta.
+
+Simple answer, we are as developer friendly as is viable. Firstly, we offer a generous free plan. Secondly, a usage-based plan on the number of events your architecture emits, with small increments to avoid unexpected such that you never get an unexpected bill. Moreover, if for some reason you were to go beyond the number of events you had planned for, simply let us know, we've been there and we're always happy to work with you on these things.
+
+<ArticleImage  src={import.meta.env.BASE_URL + "changelog-005/pricing.png"}  alt="Pricing" title="Pricing Overview" source="">
+</ArticleImage>
+
+
+### New Brand Identity
+
+To celebrate launching our public beta, we've revamped our brand identity. New logo, new [website](https://baselime.io), all the good stuff.
+
+[Let us know](https://join.slack.com/t/baselimecommunity/shared_invite/zt-1hea7g9uu-z69IghjEqPqD4P0rRlEQVw) what you think :).
+
+## 🎯 What’s Next?
+
+- **More templates:** The next month is all about providing you with more tools to get started with as little friction as possible
+- **More community activities:** Our community has been focused on feedback over the past few months. We plan to make it a more vibrant community of serverless enthusiasts from all around the world; [join us](https://join.slack.com/t/baselimecommunity/shared_invite/zt-1hea7g9uu-z69IghjEqPqD4P0rRlEQVw).
+- **Refining the platform:** We've got a lot of the foundations for continuous observability covered. We want to spend the next month refining everything and streamlining the experience as much as possible.
+
+## 👨‍💻 Hiring
+
+We're looking for an exceptional front-end developer to help us build the future of observability:
+
+- [Software engineer (Front-end)](https://www.notion.so/Software-Engineer-Front-end-7bce84e54e30428dacfad803c2932eec)
+
+If this is you, the best time to join us was yesterday. The next best time is today!
+
+We look forward to welcoming you in our [Slack community](https://join.slack.com/t/baselimecommunity/shared_invite/zt-1eu7l0ag1-wxYXQV6Fr_aiB3ZPm3LhDQ). Let’s make Observability as Code the new norm!
