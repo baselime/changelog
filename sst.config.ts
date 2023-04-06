@@ -14,7 +14,7 @@ export default {
         
       });
       stack.addOutputs({
-        url: site.url || "http://localhost:3000",
+        url: `${site.url}/changelog/` || "http://localhost:3000",
       });
     });
   },

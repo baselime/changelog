@@ -9,7 +9,10 @@ import vue from "@astrojs/vue";
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  // base: '/changelog',
+  base: '/changelog',
   adapter: aws(),
-  integrations: [mdx(), tailwind(), rome(), vue()]
+  integrations: [mdx({
+    extendMarkdownConfig: true,
+    
+  }), tailwind(), rome(), vue()]
 });

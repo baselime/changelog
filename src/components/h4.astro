@@ -1,0 +1,15 @@
+---
+export interface Props { 
+    id: string;
+}
+---
+
+<h4 id={Astro.props.id} class="flex group">
+    <a href={`#${Astro.props.id}`} class="hidden -ml-8 h-6 mt-1 float-left w-8 group-hover:block">
+        <span>
+            <img class="w-6" src="/link.svg" />
+        </span>
+        
+    </a>
+    <slot></slot>
+</h4>

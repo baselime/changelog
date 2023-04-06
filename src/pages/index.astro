@@ -3,7 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import ChangelogLayout from "../layouts/ChangelogLayout.astro";
 import { getCollection } from "astro:content";
 import Next from "../components/next.astro";
-
+import H2 from '../components/h2.astro';
+import H3 from "../components/h3.astro";
+import H4 from "../components/h4.astro";
 const changelog = await getCollection("changelog");
 
 const first = changelog.sort((a,b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 3);
@@ -17,10 +19,9 @@ const highlightedChangelogs = await Promise.all(
 	{
 		highlightedChangelogs.map(({ data, Post }) => (
 			<ChangelogLayout changelog={data}>
-				<Post.Content />
+				<Post.Content components={{h2: H2, h3: H3, h4: H4} } />
 			</ChangelogLayout>
 		))
 	}
 	<Next next={1} />
-	
 </Layout>
