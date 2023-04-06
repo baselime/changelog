@@ -9,7 +9,7 @@ import vue from "@astrojs/vue";
 // https://astro.build/config
 export default defineConfig({
   // output: "server",
-  site: 'https://baselime.cc',
+  site: 'https://baselime.cc/changelog',
   base: '/changelog',
   adapter: aws(),
   integrations: [mdx({
