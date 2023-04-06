@@ -8,11 +8,11 @@ import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
+  // output: "server",
+  site: 'https://baselime.github.io',
   base: '/changelog',
   adapter: aws(),
   integrations: [mdx({
     extendMarkdownConfig: true,
-    
   }), tailwind(), rome(), vue()]
 });
