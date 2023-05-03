@@ -5,7 +5,6 @@ import ArticleImage from "../../components/article-image.astro";
 import Next from "../../components/next.astro";
 import { getCollection } from "astro:content";
 
-import { getCollection } from "astro:content";
 
 // This adds static build support if we move back to ssr we can remove it
 export async function getStaticPaths() {
@@ -19,7 +18,6 @@ export async function getStaticPaths() {
 const page = Number(Astro.params.page) || 0;
 
 const changelog = await getCollection("changelog");
-
 const first = changelog
     .sort(
         (a, b) =>

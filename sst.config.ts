@@ -2,7 +2,7 @@ import type { SSTConfig } from "sst";
 import * as s3Deploy from "aws-cdk-lib/aws-s3-deployment";
 import * as ssm from "aws-cdk-lib/aws-ssm";
 
-import { AstroSite, Bucket } from "sst/constructs";
+import { Bucket } from "sst/constructs";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
@@ -35,7 +35,7 @@ export default {
 
 			new ssm.StringParameter(this, "changelogUrlParameter", {
 				parameterName: `/${stack.stage}/baselime/changelog/s3/url`,
-				stringValue: bucket.cdk.bucket.bucketWebsiteUrl,
+				stringValue: bucket.cdk.bucket.bucketWebsiteDomainName,
 				description: "The url of the command queue in the vega service",
 				tier: ssm.ParameterTier.STANDARD,
 				allowedPattern: ".*",
@@ -47,3 +47,4 @@ export default {
 		});
 	},
 } satisfies SSTConfig;
+

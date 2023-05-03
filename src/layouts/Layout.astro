@@ -16,25 +16,25 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="flex flex-col justify-between min-h-screen">
+	<body class="flex flex-col justify-between min-h-screen bg-l-g-4">
 		<Header />
 
-		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-			<div class="mx-auto max-w-2xl">
+		<div class="mx-72 sm:px-6 lg:px-8">
+			<div class="mx-auto">
 				<main
-					class="grid min-h-full place-items-center px-6 py-6 sm:py-16 lg:px-8"
+					class="flex flex-row min-h-full px-6 py-6 sm:py-16 lg:px-8 border-b border-l-g-7"
 				>
-					<div class="text-center">
+					<div class="relative w-1/5 h-full"></div>
+					<div class="">
 						<a href={import.meta.env.BASE_URL}>
 							<h1
-								class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl"
+								class="mt-4 text-3xl font-bold tracking-tight text-l-g-10 sm:text-5xl"
 							>
 								Changelog
 							</h1>
-							<p class="mt-6 text-base leading-7 text-gray-600">
-								Shipped every friday, and most other days of the
-								week too
-							</p>
+							<h2 class="mt-6 text-base leading-7 text-l-g-10">
+								New updates shipped every Friday.
+							</h2>
 						</a>
 					</div>
 				</main>

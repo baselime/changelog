@@ -21,7 +21,7 @@ const backfaceVisibility = plugin(function ({ addUtilities }) {
 module.exports = {
   mode: 'jit',
   content: [
-   'src/**'
+    './src/**',
   ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
