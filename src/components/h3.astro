@@ -5,9 +5,9 @@ export interface Props {
 ---
 
 <h3 id={Astro.props.id} class="flex group">
-    <a href={`#${Astro.props.id}`} class="hidden -ml-8 h-6 mt-1 float-left w-8 group-hover:block">
+    <a href={`#${Astro.props.id}`} class="hidden text-white -ml-8 h-6 mt-1 float-left w-8 group-hover:block">
         <span>
-            <img class="w-6" src="/link.svg" />
+            <img class="w-6" src={import.meta.env.BASE_URL + "link.svg"} />
         </span>
         
     </a>

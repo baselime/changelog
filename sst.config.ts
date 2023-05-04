@@ -1,7 +1,7 @@
 import type { SSTConfig } from "sst";
 import * as s3Deploy from "aws-cdk-lib/aws-s3-deployment";
 import * as ssm from "aws-cdk-lib/aws-ssm";
-
+import * as s3 from "aws-cdk-lib/aws-s3";
 import { Bucket } from "sst/constructs";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -23,6 +23,7 @@ export default {
 					bucket: {
 						websiteIndexDocument: "index.html",
 						publicReadAccess: true,
+						blockPublicAccess: s3.BlockPublicAccess.BLOCK_ACLS
 					},
 				},
 			});

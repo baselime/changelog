@@ -9,12 +9,12 @@ const { changelog } = Astro.props;
 ---
 
 <div class="changelog">
-    <div class="flex lg:flex-row flex-col border-t border-l-g-7 pb-5">
+    <div class="flex lg:flex-row flex-col border-t border-l-g-7 max-w-7xl pb-5">
         <div class="w-1/5 h-full text-l-g-7 mt-16">
             <p>{new Date(changelog.data.date).toDateString()}</p>
         </div>
         <div class="w-4/5 max-w-5xl">
-            <a href={import.meta.env.BASE_URL + changelog.slug}>
+            <a href={import.meta.env.BASE_URL + "slug/" +changelog.slug}>
                 <img
                     class="rounded-xl cover mt-16"
                     src={import.meta.env.BASE_URL + changelog.data.cover}
