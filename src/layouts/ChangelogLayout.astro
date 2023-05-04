@@ -1,26 +1,26 @@
 ---
-import { CollectionEntry, getEntryBySlug } from "astro:content";
+import { CollectionEntry } from "astro:content";
 
 export interface Props {
     changelog: CollectionEntry<"changelog">;
 }
 
 const { changelog } = Astro.props;
-
-const author = await getEntryBySlug("author", changelog.data.author.id);
 ---
 
 <div class="changelog">
-    <div class="flex border-b border-l-g-7 pb-5">
+    <div class="flex lg:flex-row flex-col border-t border-l-g-7 pb-5">
         <div class="w-1/5 h-full text-l-g-7 mt-16">
             <p>{new Date(changelog.data.date).toDateString()}</p>
         </div>
-        <div class="w-4/5">
-            <img
-            class="rounded-xl cover mt-16"
-            src={import.meta.env.BASE_URL + changelog.data.cover}
-            alt="Cover for Changelog"
-        />
+        <div class="w-4/5 max-w-5xl">
+            <a href={import.meta.env.BASE_URL + changelog.slug}>
+                <img
+                    class="rounded-xl cover mt-16"
+                    src={import.meta.env.BASE_URL + changelog.data.cover}
+                    alt="Cover for Changelog"
+                />
+            </a>
             <slot />
         </div>
     </div>

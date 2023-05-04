@@ -2,8 +2,6 @@
 import { getEntryBySlug, getCollection } from 'astro:content'
 import Layout from "../../layouts/Layout.astro";
 import ChangelogLayout from '../../layouts/ChangelogLayout.astro'
-import { getCollection } from 'astro:content';
-
 
 // This adds static build support if we move back to ssr we can remove it
 export async function getStaticPaths() {
@@ -14,6 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
+
 if (slug === undefined) {
   throw new Error("Slug is required");
 }

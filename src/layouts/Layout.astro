@@ -3,8 +3,9 @@ export interface Props {
 	title: string;
 }
 import Header from "../components/header.astro";
-import Footer from '../components/footer.astro'
+import Footer from "../components/footer.astro";
 const { title } = Astro.props;
+console.log(Astro.props);
 ---
 
 <!DOCTYPE html>
@@ -18,14 +19,22 @@ const { title } = Astro.props;
 	</head>
 	<body class="flex flex-col justify-between min-h-screen bg-l-g-4">
 		<Header />
+		<div
+			id="submitted" class="w-full items-center justify-center gap-x-6 bg-l-g-4 px-6 py-2.5 sm:px-3.5 hidden"
+		>
+			<p class="text-sm leading-6 text-white">
+				<strong class="font-semibold"
+					>Thanks for signing up to the newsletter! 🎉</strong
+				>
+			</p>
+		</div>
 
-		<div class="mx-72 sm:px-6 lg:px-8">
+		<div class="lg:mx-72 md:mx-32 sm:px-6 lg:px-8 mb-32">
 			<div class="mx-auto">
 				<main
-					class="flex flex-row min-h-full px-6 py-6 sm:py-16 lg:px-8 border-b border-l-g-7"
+					class="flex flex-row-reverse min-h-full px-6 py-6 sm:py-16 lg:px-8 border-b border-l-g-7"
 				>
-					<div class="relative w-1/5 h-full"></div>
-					<div class="">
+					<div class="w-4/5 h-full">
 						<a href={import.meta.env.BASE_URL}>
 							<h1
 								class="mt-4 text-3xl font-bold tracking-tight text-l-g-10 sm:text-5xl"
@@ -45,8 +54,8 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
-	@import url('https://fonts.bunny.net/css?family=poppins:400,500,600,700');
-	@import url('https://fonts.bunny.net/css?family=roboto:400,700|urbanist:500,700');
+	@import url("https://fonts.bunny.net/css?family=poppins:400,500,600,700");
+	@import url("https://fonts.bunny.net/css?family=roboto:400,700|urbanist:500,700");
 	html {
 		font-family: poppins, sans-serif;
 		background-color: #f6f6f6;
@@ -55,3 +64,20 @@ const { title } = Astro.props;
 		font-family: roboto;
 	}
 </style>
+
+<script is:inline>
+	const queryString = window.location.search;
+
+	const urlParams = new URLSearchParams(queryString);
+	console.log(status, status  === "subscribed")
+	if (status === "subscribed") {
+		const el = document.querySelector('#submitted');
+		if(el) {
+			console.log(el.style.display)
+			el.style.display = 'flex'
+			setTimeout(() => {
+				el.style.display = ''
+			}, 4000)
+		}
+	}
+</script>
