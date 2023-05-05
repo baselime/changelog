@@ -3,7 +3,7 @@ const nagivation = [
    { name: "Docs", url: "https://baselime.io/docs/" },
    { name: "About", to: "/about" },
    { name: "Blog", to: "/blog" },
-   // { name: 'Changelog', to: 'https://baselime.io/changelog/' },
+   { name: 'Changelog', to: '/changelog' },
    { name: "Pricing", to: "/pricing" },
    {
       name: "Community",
@@ -33,7 +33,7 @@ const nagivation = [
       </div>
    </div>
 
-   <div class="hidden xl:flex md:ml-14 items-center gap-8">
+   <div class="hidden xl:flex items-center gap-8">
       {
          nagivation.map((el) => (
             <div class="text-l-g-10 text-b-md-m border-b border-transparent hover:border-l-g-10 transition cursor-pointer">
