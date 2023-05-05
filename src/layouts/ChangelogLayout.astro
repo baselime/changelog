@@ -9,8 +9,8 @@ const { changelog } = Astro.props;
 ---
 
 <div class="changelog">
-    <div class="flex lg:flex-row flex-col border-t border-l-g-7 max-w-7xl pb-5">
-        <div class="w-1/5 h-full text-l-g-7 mt-16">
+    <div class="flex lg:flex-row flex-col border-t border-l-g-7 -z-2 max-w-7xl pb-5">
+        <div class="w-1/5 h-full text-l-g-7 mt-16 lg:sticky lg:top-6">
             <p>{new Date(changelog.data.date).toDateString()}</p>
         </div>
         <div class="w-4/5 max-w-5xl">
@@ -37,6 +37,13 @@ const { changelog } = Astro.props;
     .changelog :global(h3) {
         margin: 1.5rem 0 1rem;
         font-size: 1.4rem;
+        color: #ffffff;
+        font-weight: 600;
+    }
+
+    .changelog :global(h4) {
+        margin: 1.5rem 0 1rem;
+        font-size: 1.2rem;
         color: #ffffff;
         font-weight: 600;
     }
@@ -73,10 +80,6 @@ const { changelog } = Astro.props;
         border-radius: 4px;
         font-size: 0.9rem;
         font-family: "Monaco", monospace;
-    }
-
-    .changelog :global(a:hover) {
-        border-bottom: 2px solid #94d32e;
     }
 
     .cover {

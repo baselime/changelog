@@ -13,7 +13,8 @@ const nagivation = [
 ---
 
 <nav
-   class="w-full lg:px-72 md:px-32 px-6 flex items-center justify-around px-4 py-4 border-y xl:border-b border-l-g-7 xl:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)]"
+   id="header"
+   class="z-10 w-full lg:px-72 md:px-32 px-6 flex items-center justify-around py-4 border-b-1/2 bg-l-g-3 border-l-g-7"
 >
    <div class="flex items-center">
       <div class="flex items-center justify-between w-full">
@@ -74,3 +75,42 @@ const nagivation = [
       </div>
    </div>
 </nav>
+<script is:inline>
+   let lastKnownScrollPosition = window.scrollY;
+   let ticking = false;
+   let isUp = false;
+   const header = document.querySelector("#header");
+   function doSomething(scrollingUp) {
+      if (scrollingUp && header) {
+         header.classList.remove("animate-fadeOut");
+         header.classList.add('shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)]')
+         header.classList.add("sticky");
+         header.classList.add("animate-fadeIn");
+         header.classList.add("top-0");
+      }
+
+      if (!scrollingUp && header) {
+         header.classList.add("animate-fadeOut");
+         header.classList.remove('shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)]')
+         setTimeout(() => {
+            header.classList.remove("sticky");
+            header.classList.remove("animate-fadeIn");
+            header.classList.remove("top-0");
+         }, 450);
+      }
+   }
+
+   document.addEventListener("scroll", (event) => {
+      isUp = lastKnownScrollPosition > window.scrollY;
+      lastKnownScrollPosition = window.scrollY;
+
+      if (!ticking) {
+         window.requestAnimationFrame(() => {
+            doSomething(isUp);
+            ticking = false;
+         });
+
+         ticking = true;
+      }
+   });
+</script>

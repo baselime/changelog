@@ -1,15 +1,30 @@
 ---
-export interface Props { 
+export interface Props {
     id: string;
 }
 ---
 
 <h2 id={Astro.props.id} class="flex group">
-    <a href={`#${Astro.props.id}`} class="hidden -ml-8 h-6 mt-1 float-left w-8 group-hover:block">
+    <a
+        href={`#${Astro.props.id}`}
+        class="hidden text-white -ml-8 h-6 mt-1 float-left w-8 group-hover:block"
+    >
         <span>
-            <img class="w-6" src={import.meta.env.BASE_URL +"link.svg"} />
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#35363A"
+                class="w-6 h-6 stroke-white hover:border-b hover:border-white"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+                ></path>
+            </svg>
         </span>
-        
     </a>
-    <slot></slot>
+    <slot />
 </h2>

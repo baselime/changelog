@@ -13,45 +13,50 @@ console.log(Astro.props);
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href={import.meta.env.BASE_URL + "favicon.svg"} />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href={import.meta.env.BASE_URL + "favicon.svg"}
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="flex flex-col justify-between min-h-screen bg-l-g-4">
-		<div>
-		<Header />
-		<div
-			id="submitted" class="w-full items-center justify-center gap-x-6 bg-l-g-4 px-6 py-2.5 sm:px-3.5 hidden"
-		>
-			<p class="text-sm leading-6 text-white">
-				<strong class="font-semibold"
-					>Thanks for signing up to the newsletter! 🎉</strong
-				>
-			</p>
-		</div>
-
-		<div class="lg:mx-72 md:mx-32 mx-6 lg:px-8 mb-32">
-			<div class="mx-auto flex flex-col items-center">
-				<main
-					class="flex flex-row-reverse w-full  max-w-7xl my-6 sm:my-16"
-				>
-					<div class="w-3/4 h-full max-w-5xl">
-						<a href={import.meta.env.BASE_URL}>
-							<h1
-								class="mt-4 text-3xl font-semibold tracking-tight text-l-g-10 sm:text-5xl"
-							>
-								Changelog
-							</h1>
-							<h2 class="mt-6 text-base leading-7 text-l-g-10">
-								New updates shipped every Friday.
-							</h2>
-						</a>
-					</div>
-				</main>
-				<slot />
+	<body class="min-h-screen bg-l-g-3">
+			<Header />
+			<div
+				id="submitted"
+				class="w-full items-center justify-center gap-x-6 bg-l-g-3 px-6 py-2.5 sm:px-3.5 hidden"
+			>
+				<p class="text-sm leading-6 text-white">
+					<strong class="font-semibold"
+						>Thanks for signing up to the newsletter! 🎉</strong
+					>
+				</p>
 			</div>
-		</div>
-		</div>
+
+			<div class="lg:mx-72 md:mx-32 mx-6 lg:px-8 mb-32">
+				<div class="mx-auto flex flex-col items-center">
+					<main
+						class="flex flex-row-reverse w-full max-w-7xl my-6 sm:my-16"
+					>
+						<div class="w-3/4 h-full max-w-5xl">
+							<a href={import.meta.env.BASE_URL}>
+								<h1
+									class="mt-4 text-3xl font-semibold tracking-tight text-l-g-10 sm:text-5xl"
+								>
+									Changelog
+								</h1>
+								<h2
+									class="mt-6 text-base leading-7 text-l-g-10"
+								>
+									New updates shipped every Friday.
+								</h2>
+							</a>
+						</div>
+					</main>
+					<slot />
+				</div>
+			</div>
 		<Footer />
 	</body>
 </html>
@@ -73,13 +78,13 @@ console.log(Astro.props);
 	const urlParams = new URLSearchParams(queryString);
 	const status = urlParams.get("status");
 	if (status === "subscribed") {
-		const el = document.querySelector('#submitted');
-		if(el) {
-			console.log(el.style.display)
-			el.style.display = 'flex'
+		const el = document.querySelector("#submitted");
+		if (el) {
+			console.log(el.style.display);
+			el.style.display = "flex";
 			setTimeout(() => {
-				el.style.display = ''
-			}, 4000)
+				el.style.display = "";
+			}, 4000);
 		}
 	}
 </script>
