@@ -14,9 +14,9 @@ const nagivation = [
 
 <nav
    id="header"
-   class="z-10 w-full lg:px-72 md:px-32 px-6 flex items-center justify-around py-4 border-b-1/2 bg-l-g-3 border-l-g-7"
+   class="z-50 w-full lg:px-72 px-6 flex items-center justify-between lg:justify-around py-4 border-b-1/2 bg-l-g-3 border-l-g-7 gap-12"
 >
-   <div class="flex items-center">
+   <div class="flex items-center flex-none">
       <div class="flex items-center justify-between w-full">
          <a
             href="/"
@@ -33,7 +33,7 @@ const nagivation = [
       </div>   
    </div>
 
-   <div class="hidden xl:flex items-center gap-8">
+   <div class="hidden lg:flex items-center gap-8">
       {
          nagivation.map((el) => (
             <div class="text-l-g-10 text-b-md-m border-b border-transparent hover:border-l-g-10 transition cursor-pointer">
@@ -76,6 +76,20 @@ const nagivation = [
    </div>
 </nav>
 <script is:inline>
+   const debounce = (func, waitFor) => {
+   let timeout;
+
+   return (...args) =>
+      new Promise((resolve) => {
+         if (timeout) {
+         clearTimeout(timeout);
+         }
+
+         //@ts-ignore
+         timeout = setTimeout(() => resolve(func(...args)), waitFor);
+      });
+   };
+
    let lastKnownScrollPosition = window.scrollY;
    let ticking = false;
    let isUp = false;
@@ -101,16 +115,18 @@ const nagivation = [
    }
 
    document.addEventListener("scroll", (event) => {
-      isUp = lastKnownScrollPosition > window.scrollY;
-      lastKnownScrollPosition = window.scrollY;
-
-      if (!ticking) {
-         window.requestAnimationFrame(() => {
+      debounce(() => {
+        isUp = lastKnownScrollPosition > window.scrollY;
+        lastKnownScrollPosition = window.scrollY;
+  
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
             doSomething(isUp);
             ticking = false;
-         });
-
-         ticking = true;
-      }
+          });
+  
+          ticking = true;
+        }
+      }, 5)();
    });
 </script>
