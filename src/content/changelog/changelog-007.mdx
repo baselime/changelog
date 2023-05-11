@@ -1,0 +1,64 @@
+---
+title: "Changelog #007"
+description: Invocations view, error aggregation, service health and much more... 
+cover: changelog-007.png
+alt: "Changelog #007"
+featured: true
+date: 2023-05-11
+published: true
+author:
+  id: boris-tane
+  name: Boris Tane
+tags: 
+  - product-update
+  - changelog
+---
+import ArticleImage from '../../components/article-image.astro'
+
+## Invocations View
+
+Easily view all the Lambda function invocations that match a query. In addition to raw events, traces, and visualizations, this new feature provides you with a complete picture of your serverless functions.
+
+## Error Aggregation
+
+Easily view all the errors for each service or Lambda function on a single screen. Errors are automatically grouped using vector distances so you can identify and resolve issues faster.
+
+## Service Health
+
+With the new Service Health screen, you can get an at-a-glance view of your serverless services' health. It includes key metrics like the number of invocations, number of errors, cold starts, number of alerts triggered, p99 latency and cold starts.
+
+<ArticleImage   src={import.meta.env.BASE_URL + "changelog-007/service-health.png"}  alt="Service health" title="Service health" source="">
+</ArticleImage>
+
+## **Multi-account and multi-environment support**
+
+You can now use our observability solution across multiple accounts and environments. This feature provides flexibility and scalability, allowing you to manage your serverless infrastructure more efficiently.
+
+## ****Simplified AWS Account Connection****
+
+With the simplified steps to [connecting your AWS account](https://baselime.io/docs/quick-start/#step-3-connect-your-aws-account), you can start running queries on your telemetry data with just a few clicks. We securely connect to your account through CloudFormation, and we keep you informed of the status of the integration at all times in the console.
+
+## Improvements & Fixes
+
+- Improved the reliability of our ingestion pipelines
+- Improved the quality of Baselime AI answers with better prompt engineering
+- Improved latency of the Baselime query engine, you should expect 40% faster queries
+- Changed the URL of the charts displayed in Slack alerts
+- Changed the URLs used to query telemetry data
+- Simplified the dashboard schema
+- Removed the namespaces command in the Baselime CLI
+- Made the frequency and window optional when defining an alert, with default values 1 hour.
+- Enabled the baselime pull command to clone existing and discovered services
+- Added [filters and calculations](https://baselime.io/docs/observability-reference-language/reference/queries/#filters-optional)
+    - COUNT_DISTINCT
+    - STDDEV
+    - VARIANCE
+    - LIKE
+    - NOT_LIKE
+    - DOES_NOT_INCLUDE
+    - MATCH_REGEX
+- Added calculation alias to queries
+- Fixed timezone mismatch when selecting a timeframe from charts
+- Added individual pages for invocations
+- Added sorting to services and functions tables
+- Removed the “Discovered” on [discovered services](https://baselime.io/docs/analysing-data/service-discovery/#discovering-services)
