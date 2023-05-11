@@ -5,7 +5,6 @@ export interface Props {
 import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
 const { title } = Astro.props;
-console.log(Astro.props);
 ---
 
 <!DOCTYPE html>
@@ -80,7 +79,6 @@ console.log(Astro.props);
 	if (status === "subscribed") {
 		const el = document.querySelector("#submitted");
 		if (el) {
-			console.log(el.style.display);
 			el.style.display = "flex";
 			setTimeout(() => {
 				el.style.display = "";
