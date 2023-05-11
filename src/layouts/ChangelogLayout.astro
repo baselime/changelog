@@ -9,8 +9,8 @@ const { changelog } = Astro.props;
 ---
 
 <div class="changelog">
-    <div class="lg:grid grid-cols-[210px_672px] gap-4 border-t border-l-g-7 -z-2 max-w-7xl mx-auto px-4 md:px-0 mb-8">
-        <div class="h-full text-l-g-7 mt-16 lg:sticky lg:top-6 flex-none">
+    <div class="lg:grid lg:grid-cols-[210px_672px] gap-4  border-t border-l-g-7 max-w-7xl mx-auto px-4 md:px-0 mb-8" style="align-items: start;">
+        <div class=" text-l-g-7 mt-16 lg:sticky lg:top-6 flex-none" style="align-self: start;">
             <p>{new Date(changelog.data.date).toDateString()}</p>
         </div>
         <div class="max-w-5xl flex-none">

@@ -23,68 +23,81 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="min-h-screen bg-l-g-3">
-			<Header />
-			<div
-				id="submitted"
-				class="w-full items-center justify-center gap-x-6 bg-l-g-3 px-6 py-2.5 sm:px-3.5 hidden"
-			>
-				<p class="text-sm leading-6 text-white">
-					<strong class="font-semibold"
-						>Thanks for signing up to the newsletter! 🎉</strong
-					>
-				</p>
-			</div>
+		<Header />
+		<div
+			id="submitted"
+			class="w-full items-center justify-center gap-x-6 bg-l-g-3 px-6 py-2.5 sm:px-3.5 hidden"
+		>
+			<p class="text-sm leading-6 text-white">
+				<strong class="font-semibold"
+					>Thanks for signing up to the newsletter! 🎉</strong
+				>
+			</p>
+		</div>
 
-			<div class="mx-6 md:mx-auto md:px-8 mb-32">
-				<div class="mx-auto flex flex-col items-center">
-					<main
-						class="w-full max-w-4xl my-6 sm:my-16"
-					>
-						<div class="h-full max-w-5xl">
-							<a href={import.meta.env.BASE_URL}>
-								<h1
-									class="mt-4 text-3xl font-semibold tracking-tight text-l-g-10 sm:text-5xl"
-								>
-									Changelog
-								</h1>
-								<h2
-									class="mt-6 text-base leading-7 text-l-g-10"
-								>
-									New updates shipped every week.
-								</h2>
-							</a>
+		<div class="mx-6 md:mx-auto md:px-8">
+			<div class="mx-auto flex flex-col items-center">
+				<main class="w-full max-w-4xl my-6 sm:my-16">
+					<div class="h-full max-w-5xl mb-12">
+						<a href={import.meta.env.BASE_URL}>
+							<h1
+								class="mt-4 text-3xl font-semibold tracking-tight text-l-g-10 sm:text-5xl"
+							>
+								Changelog
+							</h1>
+						</a>
+						<h2 class="mt-6 text-base leading-7 text-l-g-8 mb-2">
+							New updates shipped every week.
+						</h2>
+						<div class="flex items-center gap-2 text-l-g-7">
+							<a
+								href="https://console.baselime.io"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="text-l-a border-b border-transparent hover:border-l-a3 transition w-fit"
+								>Subscribe to updates</a
+							>
+							<div>•</div>
+							<a
+								href="https://twitter.com/baselimehq"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="text-l-a border-b border-transparent hover:border-l-a3 transition w-fit"
+								>Follow us on Twitter</a
+							>
 						</div>
-					</main>
+					</div>
 					<slot />
-				</div>
+				</main>
 			</div>
-		<Footer />
+			<Footer />
+		</div>
 	</body>
-</html>
-<style is:global>
-	@import url("https://fonts.bunny.net/css?family=poppins:400,500,600,700");
-	@import url("https://fonts.bunny.net/css?family=roboto:400,700|urbanist:500,700");
-	html {
-		font-family: poppins, sans-serif;
-		background-color: #f6f6f6;
-	}
-	code {
-		font-family: roboto;
-	}
-</style>
-
-<script is:inline>
-	const queryString = window.location.search;
-
-	const urlParams = new URLSearchParams(queryString);
-	const status = urlParams.get("status");
-	if (status === "subscribed") {
-		const el = document.querySelector("#submitted");
-		if (el) {
-			el.style.display = "flex";
-			setTimeout(() => {
-				el.style.display = "";
-			}, 4000);
+	<style is:global>
+		@import url("https://fonts.bunny.net/css?family=poppins:400,500,600,700");
+		@import url("https://fonts.bunny.net/css?family=roboto:400,700|urbanist:500,700");
+		html {
+			font-family: poppins, sans-serif;
+			background-color: #f6f6f6;
 		}
-	}
-</script>
+		code {
+			font-family: roboto;
+		}
+	</style>
+
+	<script is:inline>
+		const queryString = window.location.search;
+
+		const urlParams = new URLSearchParams(queryString);
+		const status = urlParams.get("status");
+		if (status === "subscribed") {
+			const el = document.querySelector("#submitted");
+			if (el) {
+				el.style.display = "flex";
+				setTimeout(() => {
+					el.style.display = "";
+				}, 4000);
+			}
+		}
+	</script>
+</html>
