@@ -2,6 +2,7 @@
 export interface Props {
 	title: string;
 }
+import { SEO } from "astro-seo";
 import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
 const { title } = Astro.props;
@@ -21,6 +22,33 @@ const { title } = Astro.props;
 
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<SEO
+      title="Baselime Observability and Monitoring for Serverless and AWS"
+      description="Baselime is the simplest AWS and Serverless Monitoring and Observability Tool. It monitors logs, metrics, and traces. Creating Alarms, and dashboards with AI. Reduce MTTR, build serverless applications faster, and monitor cloudwatch with the CDK."
+      openGraph={{
+        basic: {
+          title: "Baselime Observability and Monitoring for Serverless and AWS",
+          type: "website",
+          image: "https://baselime.io/changelog/changelog-007.png",
+        }
+      }}
+      twitter={{
+        creator: "boristane"
+      }}
+      extend={{
+        // extending the default link tags
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+        // extending the default meta tags
+        meta: [
+          {
+            name: "twitter:image",
+            content: "https://pbs.twimg.com/profile_banners/1438368458555772932/1680131493/1500x500",
+          },
+          { name: "twitter:title", content: "Baselime" },
+          { name: "twitter:description", content: "Observability for Serverless" },
+        ],
+      }}
+    />
 	</head>
 	<body class="min-h-screen bg-l-g-3">
 		<Header />
