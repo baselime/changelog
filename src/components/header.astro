@@ -3,7 +3,7 @@ const nagivation = [
    { name: "Docs", url: "https://baselime.io/docs/" },
    { name: "About", to: "/about" },
    { name: "Blog", to: "/blog" },
-   { name: 'Changelog', to: '/changelog' },
+   { name: "Changelog", to: "/changelog" },
    { name: "Pricing", to: "/pricing" },
    {
       name: "Community",
@@ -30,7 +30,7 @@ const nagivation = [
                class="h-6 w-auto sm:h-8"
             />
          </a>
-      </div>   
+      </div>
    </div>
 
    <div class="hidden lg:flex items-center gap-8">
@@ -77,17 +77,17 @@ const nagivation = [
 </nav>
 <script is:inline>
    const debounce = (func, waitFor) => {
-   let timeout;
+      let timeout;
 
-   return (...args) =>
-      new Promise((resolve) => {
-         if (timeout) {
-         clearTimeout(timeout);
-         }
+      return (...args) =>
+         new Promise((resolve) => {
+            if (timeout) {
+               clearTimeout(timeout);
+            }
 
-         //@ts-ignore
-         timeout = setTimeout(() => resolve(func(...args)), waitFor);
-      });
+            //@ts-ignore
+            timeout = setTimeout(() => resolve(func(...args)), waitFor);
+         });
    };
 
    let lastKnownScrollPosition = window.scrollY;
@@ -97,36 +97,36 @@ const nagivation = [
    function doSomething(scrollingUp) {
       if (scrollingUp && header) {
          header.classList.remove("animate-fadeOut");
-         header.classList.add('shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)]')
+         header.classList.add("shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)]");
+         header.classList.add("top-0");
          header.classList.add("sticky");
          header.classList.add("animate-fadeIn");
-         header.classList.add("top-0");
       }
 
       if (!scrollingUp && header) {
          header.classList.add("animate-fadeOut");
-         header.classList.remove('shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)]')
          setTimeout(() => {
+            header.classList.remove(
+               "shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)]"
+            );
             header.classList.remove("sticky");
             header.classList.remove("animate-fadeIn");
             header.classList.remove("top-0");
-         }, 450);
+         }, 30);
       }
    }
 
    document.addEventListener("scroll", (event) => {
-      debounce(() => {
-        isUp = lastKnownScrollPosition > window.scrollY;
-        lastKnownScrollPosition = window.scrollY;
-  
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
+      isUp = lastKnownScrollPosition > window.scrollY;
+      lastKnownScrollPosition = window.scrollY;
+
+      if (!ticking) {
+         window.requestAnimationFrame(() => {
             doSomething(isUp);
             ticking = false;
-          });
-  
-          ticking = true;
-        }
-      }, 15)();
+         });
+
+         ticking = true;
+      }
    });
 </script>

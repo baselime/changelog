@@ -25,8 +25,8 @@ module.exports = {
 		extend: {
 			animation: {
 				scroll: "scroll 50s linear infinite",
-				fadeIn: "fadeIn 0.5s ease-in-out",
-        fadeOut: "fadeOut 0.5s ease-in-out"
+				fadeIn: "fadeIn 0.3s ease-in-out",
+				fadeOut: "fadeOut 0.3s ease-in-out",
 			},
 			keyframes: {
 				scroll: {
@@ -37,10 +37,10 @@ module.exports = {
 					"0%": { transform: "translateY(-200px)" },
 					"100%": { transform: "translateY(0px)" },
 				},
-        fadeOut: {
-          "0%": { transform: "translateY(0px)" },
+				fadeOut: {
+					"0%": { transform: "translateY(0px)" },
 					"100%": { transform: "translateY(-200px)" },
-        }
+				},
 			},
 			fontSize: {
 				"h-2xl-r": [
