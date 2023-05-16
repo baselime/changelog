@@ -76,24 +76,19 @@ const nagivation = [
    </div>
 </nav>
 <script is:inline>
-   const debounce = (func, waitFor) => {
-      let timeout;
-
-      return (...args) =>
-         new Promise((resolve) => {
-            if (timeout) {
-               clearTimeout(timeout);
-            }
-
-            //@ts-ignore
-            timeout = setTimeout(() => resolve(func(...args)), waitFor);
-         });
-   };
-
    let lastKnownScrollPosition = window.scrollY;
    let ticking = false;
    let isUp = false;
    const header = document.querySelector("#header");
+
+   header.addEventListener("animationend", (e) => {
+      if (e.animationName === "fadeOut") {
+         header.classList.remove("shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)]");
+         header.classList.remove("sticky");
+         header.classList.remove("animate-fadeIn");
+         header.classList.remove("top-0");
+      }
+   });
    function doSomething(scrollingUp) {
       if (scrollingUp && header) {
          header.classList.remove("animate-fadeOut");
@@ -105,14 +100,6 @@ const nagivation = [
 
       if (!scrollingUp && header) {
          header.classList.add("animate-fadeOut");
-         setTimeout(() => {
-            header.classList.remove(
-               "shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)]"
-            );
-            header.classList.remove("sticky");
-            header.classList.remove("animate-fadeIn");
-            header.classList.remove("top-0");
-         }, 30);
       }
    }
 
