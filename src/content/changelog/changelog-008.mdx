@@ -1,0 +1,57 @@
+---
+title: "Changelog #008"
+description: Baselime CDK, Markers API, simplified CLI and much more... 
+cover: changelog-008.png
+alt: "Changelog #008"
+featured: true
+date: 2023-05-18
+published: true
+author:
+  id: boris-tane
+  name: Boris Tane
+tags: 
+  - product-update
+  - changelog
+---
+import ArticleImage from '../../components/article-image.astro'
+
+## Baselime CDK
+
+We understand the value of Observability as Code - it enables you to keep observability as a first-class citizen of your architecture. We’re introducing [Baselime CDK](https://github.com/Baselime/cdk), a set of CDK constructs to interact with the Baselime management API directly from your AWS CDK code. Create all your queries, alerts and dashboards within the CDK.
+
+## Markers API
+
+You can now create markers using the Baselime API. Markers indicate significant or interesting events that occurred in your architecture, outside of your telemetry data - they’re typically used for deployments and can also be used to mark migrations, outages or system upgrades.
+
+The Baselime Markers API is currently available at `https://go.baselime.io/v1/markers`. Markers will be implemented visually in the console in the coming weeks.
+
+## Simplified CLI
+
+The [Baselime CLI](https://github.com/Baselime/cli) is continuously being improved based on your feedback (thanks!). We have removed most of the “management” commands in favour of brevity and simplicity. Also, we renamed a few commands to better reflect your understanding of their purpose.
+
+<ArticleImage   src={import.meta.env.BASE_URL + "changelog-008/baselime-test-command.png"}  alt="baselime test command" title="baselime test command" source="">
+</ArticleImage>
+
+- Improved the output of `baselime test`
+- Renamed `push` command to `deploy`
+- Renamed `environments` command to `connect`
+- Renamed `snapshot` command to `test`
+- Deleted `alerts` commands
+- Deleted `destroy` command
+- Deleted `explain` command
+- Deleted `queries` commands
+- Deleted `services` commands
+
+## Improvements & Fixes
+
+- Added support for HTTP API Gateway logs
+- Reduced the number of events from CloudTrail, leading to a ~95% reduction in potential AWS costs
+- Fixed timestamp mismatch when “Loading more” logs and invocations in the console
+- Revamped the navigation in the console
+- Allow disabling CloudWatch metrics when connecting a new AWS account to Baselime
+- Improved the trace display with dedicated icons for “Initialisation”, “Overhead” and “Invocation” spans
+- Added support and help chat widget in the console
+- Fixed inconsistent `data` URL in the CLI when passing an `--endpoint` in the command arguments
+- Improved the latency of queries with filters or calculations on `LogLevel`, `@initDuration`, `@duration` and `@type`. You should expect ~40% faster queries
+- Implemented CloudWatch subscription filters protection when connecting your AWS account to Baselime
+- Improved docs throughout
