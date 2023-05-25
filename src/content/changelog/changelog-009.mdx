@@ -1,0 +1,53 @@
+---
+title: "Changelog #009"
+description: S3 Archival, deployments, granularity selector, and much more... 
+cover: changelog-009.png
+alt: "Changelog #009"
+featured: true
+date: 2023-05-25
+published: true
+author:
+  id: boris-tane
+  name: Boris Tane
+tags: 
+  - product-update
+  - changelog
+---
+import ArticleImage from '../../components/article-image.astro'
+
+## S3 Archival
+
+We know how important your data is to you. That's why we've added S3 archival to Baselime. All the telemetry data ingested into Baselime is now streamed to an [S3 bucket in your AWS account](https://baselime.io/docs/sending-data/overview/), giving you full control over your data and long-term archival.
+
+## Deployments
+
+Keeping track of all your CloudFormation deployments has improved. Baselime now automatically detects deployments so you can view them listed per service, with details about the applied change-set. This enables you to quickly and easily see changes made to your infrastructure.
+
+## Granularity
+
+We understand that different queries require different levels of granularity. So we added the ability to define the time granularity of your queries. This enables you to get the insights you need, exactly as you need them.
+
+<ArticleImage   src={import.meta.env.BASE_URL + "changelog-009/granularity-selector.png"}  alt="Baselime console granularity selector" title="Baselime console granularity selector" source="">
+</ArticleImage>
+
+## Contextual Dropdowns
+
+We changed key dropdowns in the web console to provide more relevant details and improved clarity. This includes the dataset, operation and operators selectors. This enables you to quickly and easily find the information you need, without any confusion.
+
+<ArticleImage   src={import.meta.env.BASE_URL + "changelog-009/contextual-dropdowns.png"}  alt="Baselime console dataset selector" title="Baselime console dataset selector" source="">
+</ArticleImage>
+
+## Email Alerts
+
+We've introduced alerts sent via email. Now alerts can be sent via email, Slack and webhook. This enables you to stay on top of any issues, no matter where you are.
+
+## Improvements & Fixes
+
+- Enabled collapsing the query and alert builders
+- Refreshed the visual query builder (reduced fonts, added tooltips, revamped search-bars, fixed hover states and dropdowns)
+- Added API keys page
+- Fix the stopwatch icon on the bottom-right corner of the console
+- Fixed hiding the pencil icon when hovering on the id of a Baselime resource
+- Simplified environments card on the home screen
+- Removed the “Sandbox” pill on the home screen
+- Removed “Service” from the sub-navigation bar
