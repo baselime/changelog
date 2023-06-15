@@ -1,0 +1,37 @@
+---
+title: "Changelog #012"
+description: New pricing, rehydration API, OTel SDK, and much more... 
+cover: changelog-012.png
+alt: "Changelog #012"
+featured: true
+date: 2023-06-15
+published: true
+author:
+  id: boris-tane
+  name: Boris Tane
+tags: 
+  - product-update
+  - changelog
+---
+import ArticleImage from '../../components/article-image.astro'
+
+
+## New Pricing - Invocations
+
+Predictability - It’s what excites us about our [new pricing plan](https://baselime.io/pricing). It’s based on the number of invocations, which is computed by counting the number of unique request IDs or trace IDs in your telemetry data. Maintaining usage-based pricing gives you more predictability in your costs while giving you the ability to scale down to zero for small workloads. We hope this change makes it easier for you to budget and plan for your observability needs.
+
+## Rehydration API
+
+Sometimes it’s necessary to go back in time and dig through historical data to better understand your system today. The new rehydration API enables you to re-ingest expired logs, metrics and traces to get the insights you may have missed.
+
+## OpenTelemetry Distribution for Node.js
+
+Our [Otel distro](https://github.com/baselime/lambda-node-opentelemetry/tree/main) now supports SST v2 and ES modules. We replaced the `@opentelemetry/instrumentation-aws-lambda` package with a custom manual plugin that you wrap your handlers with. This enables you to work with any packaging format.
+
+## Improvements & Fixes
+
+- We now also distribute our [Otel distro](https://github.com/baselime/lambda-node-opentelemetry/tree/main#automatic-instrumentation) as a layer
+- Improved navigation in the console
+- Improved reliability of charts
+- Added button to easily copy Observability as Code configs in the console
+- Fixed defect where logs missing request ID would have request ID taken from the event body
