@@ -1,0 +1,51 @@
+---
+title: "Changelog #014"
+description: Automatic Zero-latency OpenTelemetry Tracing, GitHub Signup, Error Surge Sotifications, and much more... 
+cover: changelog-014.png
+alt: "Changelog #014"
+featured: true
+date: 2023-06-29
+published: true
+author:
+  id: boris-tane
+  name: Boris Tane
+tags: 
+  - product-update
+  - changelog
+---
+import ArticleImage from '../../components/article-image.astro'
+
+## Automatic OpenTelemetry Tracing
+
+Baselime now enables you to automatically instrument your Node.js AWS Lambda functions with OTel. Simply add the baselime:tracing [tag](https://docs.aws.amazon.com/lambda/latest/dg/configuration-tags.html) to your Lambda functions, we’ll take care of the rest. You can effortlessly get industry-standard distributed tracing, and improve the performance and behaviour of your Lambda functions without any manual configuration.
+
+## GitHub Signup
+
+Are we really a developer tool without GitHub signup? You can now create a Baselime account using your GitHub credentials.
+
+<ArticleImage   src={import.meta.env.BASE_URL + "changelog-014/github.png"}  alt="GitHub Signup" title="GitHub Signup" source="">
+</ArticleImage>
+
+## Automated Error Surge Notification
+
+It’s critical for any serverless team to be alerted when the number of errors in their architecture suddenly and drastically increases.
+
+It's why we introduced automated email notifications for error surges. This email has error surges conveniently grouped by services and provides a direct link to the root cause. In the coming weeks, we’ll expand this feature to allow fine-tuning of the sensitivity such that it matches your architecture specifically.
+
+<ArticleImage   src={import.meta.env.BASE_URL + "changelog-014/surge.png"}  alt="Automated error surge email" title="Automated error surge email" source="">
+</ArticleImage>
+
+## Improvements & Fixes
+
+- Added support for `INCREASES_BY_MORE_THAN` and `DECREASES_BY_MORE_THAN` alert thresholds
+- Fixed missing event when the incoming event is a string with non-ASCII characters
+- Fixed parsing of key-value pair log strings where the string contained a URL
+- Added ability to delete a user account
+- Added full-screen charts to the console
+- Improved developer experience around the Baselime CDK
+- Clarified Slack bot messaging for when a user tries to connect their account multiple times
+- Performance improvements on the X-Ray traces processor
+- Improved the trace waterfall view, with more service icons and better colors
+
+<ArticleImage   src={import.meta.env.BASE_URL + "changelog-014/trace.png"}  alt="Trace waterfall view" title="Trace waterfall view" source="">
+</ArticleImage>
