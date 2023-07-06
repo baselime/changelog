@@ -1,0 +1,28 @@
+---
+title: "Changelog #015"
+description: Console markers, and much more... 
+cover: changelog-015.png
+alt: "Changelog #015"
+featured: true
+date: 2023-07-06
+published: true
+author:
+  id: boris-tane
+  name: Boris Tane
+tags: 
+  - product-update
+  - changelog
+---
+import ArticleImage from '../../components/article-image.astro'
+
+## Console Markers
+
+We’re excited to introduce Console Markers, a new feature that lets you identify interesting events in your architecture easily. Markers are automatically generated for deployments of your serverless applications and are now displayed as overlays on your charts. This enables you to pinpoint significant events within your system quickly.
+
+## Improvements & Fixes
+
+- Added support for gzip compressed OpenTelemetry traces
+- Fixed navigation buttons that would intermittently freeze the console
+- Improved reliability for polling X-Ray traces
+- Fixed a timeout bug that would happen between the Baselime Node.js layer and the [Baselime extension](https://baselime.io/docs/sending-data/opentelemetry/nodejs/)
+- Fixed `disableStackFilter` behaviour in [Baselime CDK](https://baselime.io/docs/tutorials/cdk/)
