@@ -18,7 +18,7 @@ const { title } = Astro.props;
 			type="image/svg+xml"
 			href={import.meta.env.BASE_URL + "favicon.svg"}
 		/>
-		<script defer data-domain="baselime.io" src="https://plausible.io/js/script.js"></script>
+		<script defer data-domain="baselime.io" src="https://plausible.io/js/script.tagged-events.js"></script>
 
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -82,7 +82,7 @@ const { title } = Astro.props;
 								href="https://console.baselime.io"
 								target="_blank"
 								rel="noopener noreferrer"
-								class="text-l-a border-b border-transparent hover:border-l-a3 transition w-fit"
+								class={`text-l-a border-b border-transparent hover:border-l-a3 transition w-fit plausible-event-name=GOTO_CONSOLE plausible-event-position=changelog+title plausible-event-cta=${'Subscribe to updates'.replaceAll(' ', '+')}`}
 								>Subscribe to updates</a
 							>
 							<div>•</div>
