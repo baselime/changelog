@@ -18,18 +18,18 @@ const { title } = Astro.props;
 			type="image/svg+xml"
 			href={import.meta.env.BASE_URL + "favicon.svg"}
 		/>
-		<script defer data-domain="baselime.io" src="https://plausible.io/js/script.js"></script>
+		<script defer data-domain="baselime.io" src="https://plausible.io/js/script.tagged-events.js"></script>
 
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<SEO
-      title="Baselime Observability for Serverless applications"
-      description="Baselime is the simplest Serverless Observability solutions. It gives you visibility accross logs, metrics, and traces and events. Creating Alarms, and dashboards with AI. Reduce MTTR, build serverless applications faster, and innovate daily."
+      title="Baselime Serverless Observability"
+      description="Baselime is the simplest serverless observability solution. Simplify your serverless stack with visibility accross logs, metrics, traces and events. Create alerts, and dashboards with AI. Reduce MTTR, build serverless applications faster, and innovate daily."
       openGraph={{
         basic: {
-          title: "Baselime Observability for Serverless applications",
+          title: "Baselime Serverless Observability",
           type: "website",
-          image: "https://baselime.io/changelog/changelog-013.png",
+          image: "https://baselime.io/changelog/changelog-017.png",
         }
       }}
       twitter={{
@@ -45,7 +45,7 @@ const { title } = Astro.props;
             content: "https://pbs.twimg.com/profile_banners/1438368458555772932/1680131493/1500x500",
           },
           { name: "twitter:title", content: "Baselime" },
-          { name: "twitter:description", content: "Observability for Serverless" },
+          { name: "twitter:description", content: "Serverless Observability" },
         ],
       }}
     />
@@ -82,7 +82,7 @@ const { title } = Astro.props;
 								href="https://console.baselime.io"
 								target="_blank"
 								rel="noopener noreferrer"
-								class="text-l-a border-b border-transparent hover:border-l-a3 transition w-fit"
+								class={`text-l-a border-b border-transparent hover:border-l-a3 transition w-fit plausible-event-name=GOTO_CONSOLE plausible-event-position=changelog+title plausible-event-cta=${'Subscribe to updates'.replaceAll(' ', '+')}`}
 								>Subscribe to updates</a
 							>
 							<div>•</div>

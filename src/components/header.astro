@@ -1,12 +1,12 @@
 ---
 const nagivation = [
-   { name: "Docs", url: "https://baselime.io/docs/" },
-   { name: "About", to: "/about" },
-   { name: "Blog", to: "/blog" },
-   { name: "Changelog", to: "/changelog" },
-   { name: "Pricing", to: "/pricing" },
+   { id: "docs", name: "Docs", url: "https://baselime.io/docs/" },
+   { id: "about", name: "About", to: "/about" },
+   { id: "blog", name: "Blog", to: "/blog" },
+   { id: "changelog", name: "Changelog", to: "/changelog" },
+   { id: "pricing", name: "Pricing", to: "/pricing" },
    {
-      name: "Community",
+      id: "community", name: "Community",
       url: "https://join.slack.com/t/baselimecommunity/shared_invite/zt-1eu7l0ag1-wxYXQV6Fr_aiB3ZPm3LhDQ",
    },
 ];
@@ -36,7 +36,7 @@ const nagivation = [
    <div class="hidden lg:flex items-center gap-8">
       {
          nagivation.map((el) => (
-            <div class="text-l-g-10 text-b-md-m border-b border-transparent hover:border-l-g-10 transition cursor-pointer">
+            <div class={`text-l-g-10 text-b-md-m border-b border-transparent hover:border-l-g-10 transition cursor-pointer plausible-event-name=GOTO_${el.id.toUpperCase()} plausible-event-position=header plausible-event-cta=${el.name.replaceAll(' ', '+')}`}>
                <a href={el.url || el.to}>{el.name}</a>
             </div>
          ))
@@ -47,7 +47,7 @@ const nagivation = [
       <div class="relative">
          <a
             href="https://console.baselime.io"
-            class="w-full relative border border-transparent h-full flex items-center justify-center gap-2 transition-all bottom-0 hover:bottom-0.5 backface-hidden py-4 md:py-3 px-8 rounded-xl text-b-md-s bg-l-g-10"
+            class={`w-full relative border border-transparent h-full flex items-center justify-center gap-2 transition-all bottom-0 hover:bottom-0.5 backface-hidden py-4 md:py-3 px-8 rounded-xl text-b-md-s bg-l-g-10 plausible-event-name=GOTO_CONSOLE plausible-event-position=header plausible-event-cta=${'Start for free'.replaceAll(' ', '+')}`}
          >
             <div
                class="flex justify-center items-center whitespace-nowrap gap-2 text-l-g-1"
