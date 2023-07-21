@@ -13,7 +13,7 @@ tags:
   - product-update
   - changelog
 ---
-import ArticleImage from '../../components/article-image.astro'
+import ArticleImage from '../../components/article-image.vue'
 
 ## Baselime CDK
 
@@ -29,7 +29,7 @@ The Baselime Markers API is currently available at `https://go.baselime.io/v1/ma
 
 The [Baselime CLI](https://github.com/Baselime/cli) is continuously being improved based on your feedback (thanks!). We have removed most of the “management” commands in favour of brevity and simplicity. Also, we renamed a few commands to better reflect your understanding of their purpose.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-008/baselime-test-command.png"}  alt="baselime test command" title="baselime test command" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-008/baselime-test-command.png"}  alt="baselime test command" title="baselime test command" source="">
 </ArticleImage>
 
 - Improved the output of `baselime test`

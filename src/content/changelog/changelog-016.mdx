@@ -13,7 +13,7 @@ tags:
   - product-update
   - changelog
 ---
-import ArticleImage from '../../components/article-image.astro'
+import ArticleImage from '../../components/article-image.vue'
 
 ## Cost Estimates
 
@@ -23,14 +23,14 @@ We’re introducing our first step towards FinOps within Baselime - you can now 
 
 We’ve introduced the `baselime mark` command in our CLI. In addition to markers created automatically when deploying serverless stacks, you can now create markers for specific, notable events such as migrations or incidents yourself. The best part? The `baselime mark` command is seamlessly integrated with [all major CI/CD providers](https://github.com/baselime/ci-pipelines) so it requires minimal setup.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-016/mark-command.png"}  alt="Baselime mark command" title="Baselime mark command" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-016/mark-command.png"}  alt="Baselime mark command" title="Baselime mark command" source="">
 </ArticleImage>
 
 ## Improved Latency of Receptors
 
 We’re constantly working to enhance your observability experience. We’re excited to announce our significant improvement to the latency of all Baselime telemetry receptors, especially the [OpenTelemetry](https://baselime.io/docs/sending-data/opentelemetry/) and [HTTP events](https://baselime.io/docs/sending-data/events-api/) receptors. This means the time necessary to send telemetry data to Baselime has been drastically reduced. How did we do this? By decoupling the process of receiving and processing the data, ensuring faster and more efficient data transmission.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-016/ingestion-pipelines.png"}  alt="Architecture diagram of the Baselime ingestion pipelines" title="Architecture diagram of the Baselime ingestion pipelines" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-016/ingestion-pipelines.png"}  alt="Architecture diagram of the Baselime ingestion pipelines" title="Architecture diagram of the Baselime ingestion pipelines" source="">
 </ArticleImage>
 
 ## Improvements & Fixes

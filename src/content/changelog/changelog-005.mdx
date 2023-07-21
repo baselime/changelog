@@ -13,7 +13,7 @@ tags:
   - product-update
   - changelog
 ---
-import ArticleImage from '../../components/article-image.astro'
+import ArticleImage from '../../components/article-image.vue'
 
 ## TL;DR
 
@@ -39,12 +39,12 @@ Sign up to Baselime today [here](https://console.baselime.io). Read on for what 
 
 Baselime now automatically ingests traces from AWS X-Ray. You can now use your traces for queries and and alerts. A common use case is to alert on failed DynamoDB operations for example. 
 
-<ArticleImage  src={import.meta.env.BASE_URL + "changelog-005/x-ray.png"}  alt="XRay Connector" title="An X-Ray trace in Baselime" source="">
+<ArticleImage client:visible  src={import.meta.env.BASE_URL + "changelog-005/x-ray.png"}  alt="XRay Connector" title="An X-Ray trace in Baselime" source="">
 </ArticleImage>
 
 Moreover, you can correlate all your AWS Lambda logs with X-Ray traces, with no code changes. If the Lambda function is instrumented and sampled, you get this out of the box.
 
-<ArticleImage  src={import.meta.env.BASE_URL + "changelog-005/logs-trace.png"}  alt="Lambda ogs in XRay trace" title="The Lambda logs inside an X-Ray trace" source="">
+<ArticleImage client:visible  src={import.meta.env.BASE_URL + "changelog-005/logs-trace.png"}  alt="Lambda ogs in XRay trace" title="The Lambda logs inside an X-Ray trace" source="">
 </ArticleImage>
 
 ### OTel
@@ -53,12 +53,12 @@ Yes, we know you want to use OpenTelemetry for your tracing, we got you covered.
 
 Not only will we ingest your OTel traces, we are also building the fastest and most lightweight OTel tracer for Node.js Lambda functions. Drop us a star on [Github](https://github.com/Baselime/lambda-node-opentelemetry)!
 
-<ArticleImage  src={import.meta.env.BASE_URL + "changelog-005/otel.png"}  alt="OTel traces" title="OTel Traces in Baselime" source="">
+<ArticleImage client:visible  src={import.meta.env.BASE_URL + "changelog-005/otel.png"}  alt="OTel traces" title="OTel Traces in Baselime" source="">
 </ArticleImage>
 
 Once in Baselime, your can explore your traces and use them as you would any other event in Baselime; set your configurations as code, run queries, define alerts, slice and dice in the CLI, etc.
 
-<ArticleImage  src={import.meta.env.BASE_URL + "changelog-005/scatter.png"}  alt="Scatter plots of traces" title="Scatter plots of traces in Baselime" source="">
+<ArticleImage client:visible  src={import.meta.env.BASE_URL + "changelog-005/scatter.png"}  alt="Scatter plots of traces" title="Scatter plots of traces in Baselime" source="">
 </ArticleImage>
 
 ### Observability Templates
@@ -82,7 +82,7 @@ Common question, quite a few people asked us how we would be charging for Baseli
 
 Simple answer, we are as developer friendly as is viable. Firstly, we offer a generous free plan. Secondly, a usage-based plan on the number of events your architecture emits, with small increments to avoid unexpected such that you never get an unexpected bill. Moreover, if for some reason you were to go beyond the number of events you had planned for, simply let us know, we've been there and we're always happy to work with you on these things.
 
-<ArticleImage  src={import.meta.env.BASE_URL + "changelog-005/pricing.png"}  alt="Pricing" title="Pricing Overview" source="">
+<ArticleImage client:visible  src={import.meta.env.BASE_URL + "changelog-005/pricing.png"}  alt="Pricing" title="Pricing Overview" source="">
 </ArticleImage>
 
 

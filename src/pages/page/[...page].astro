@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import ChangelogLayout from "../../layouts/ChangelogLayout.astro";
-import ArticleImage from "../../components/article-image.astro";
+import ArticleImage from "../../components/article-image.vue";
 import Next from "../../components/next.astro";
 import { getCollection } from "astro:content";
 
@@ -44,7 +44,7 @@ const highlightedChangelogs = await Promise.all(
                 <Next next={page + 1} />
             </>
         ) : (
-            <ArticleImage
+            <ArticleImage client:visible
                 src={import.meta.env.BASE_URL + "/before.webp"}
                 alt="Queen Liz DJ"
                 title="A time before Baselime"

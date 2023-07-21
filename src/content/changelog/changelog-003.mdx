@@ -13,7 +13,7 @@ tags:
   - product-update
   - changelog
 ---
-import ArticleImage from '../../components/article-image.astro'
+import ArticleImage from '../../components/article-image.vue'
 
 ## TL;DR
 
@@ -32,7 +32,7 @@ Connect with other devs in our [Slack community](https://join.slack.com/t/baseli
 
 We’ve been working with developers in our closed beta and we’ve drastically improved our onboarding flow after identifying a few bottlenecks. It’s now a clear three step flow followed by incremental exposure to functionalities as they become relevant to you. We’ve also added videos to walk you through the relevant sections. 
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-003/onboarding.png"}  alt="New Onboarding Flow" title="" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-003/onboarding.png"}  alt="New Onboarding Flow" title="" source="">
 </ArticleImage>
 
 
@@ -44,7 +44,7 @@ Don’t worry if your API Gateway logs are not fully structured, our parsers wil
 
 If you don’t have your API Gateway logs enabled yet, join our [Slack community](https://join.slack.com/t/baselimecommunity/shared_invite/zt-1hea7g9uu-z69IghjEqPqD4P0rRlEQVw). We’re sure one of our community members will answer all your questions and help you enable them.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-003/apigateway.png"}  alt="API Gateway Logs connector" title="An example API Gateway log on Baselime" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-003/apigateway.png"}  alt="API Gateway Logs connector" title="An example API Gateway log on Baselime" source="">
 </ArticleImage>
 
 
@@ -52,7 +52,7 @@ If you don’t have your API Gateway logs enabled yet, join our [Slack community
 
 Signing up for a new service and being left with a black screen can be daunting. We give you the option to automatically import all your CloudFormation stacks as individual applications on Baselime. This means you can start with a set of applications, dive right into exploring your telemetry data and set up your Observability as Code.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-003/import.png"}  alt="Automatic Discovery of your CloudFormation Stacks" title="" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-003/import.png"}  alt="Automatic Discovery of your CloudFormation Stacks" title="" source="">
 </ArticleImage>
 
 ### Interactivity, Everywhere.
@@ -63,7 +63,7 @@ And as a bonus, we added a button to every event so that you can quickly view th
 
 Anything can be a starting point to dig deeper.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-003/interactive.png"}  alt="Interactivity, Everywhere." title="From any event, you can filter results by any value, search for any value, or group by any key or nested key" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-003/interactive.png"}  alt="Interactivity, Everywhere." title="From any event, you can filter results by any value, search for any value, or group by any key or nested key" source="">
 </ArticleImage>
 
 ### Improved alerts in Slack
@@ -74,7 +74,7 @@ Now, when an alert with the same cause triggers multiple times within 24 hours, 
 
 Moreover, when appropriate, we add the event that triggered the alert right in the alert message so you have the all-important full context before your start investigating the defect :).
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-003/slack.png"}  alt="Improved alerts in Slack" title="" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-003/slack.png"}  alt="Improved alerts in Slack" title="" source="">
 </ArticleImage>
 
 

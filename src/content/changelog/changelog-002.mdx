@@ -13,7 +13,7 @@ tags:
   - product-update
   - changelog
 ---
-import ArticleImage from '../../components/article-image.astro'
+import ArticleImage from '../../components/article-image.vue'
 
 ## TL;DR
 
@@ -34,7 +34,7 @@ Join our [Slack community](https://join.slack.com/t/baselimecommunity/shared_inv
 
 The old console was great but it wasn’t the most intuitive and was lacking in overall ease of navigation. We went back to the drawing board and crafted a new console that is easier to navigate and more consistent across sections.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-002/console.png"}  alt="New Baselime console" title="" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-002/console.png"}  alt="New Baselime console" title="" source="">
 </ArticleImage>
 
 
@@ -42,7 +42,7 @@ The old console was great but it wasn’t the most intuitive and was lacking in 
 
 Baselime now automatically ingests telemetry data from AWS CloudTrail. AWS CloudTrail monitors and records account activity across your AWS infrastructure; but is notoriously cumbersome to query. When your CloudTrail data lands in Baselime, it’s treated like any other telemetry data and you can run arbitrary complex queries on it, set up alerts and dashboards, and investigate it with Observability as Code (OaC).
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-002/cloudtrail.png"}  alt="Cloudtrail connector" title="All the infrastructure events that happened in one of my applications over the past hour" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-002/cloudtrail.png"}  alt="Cloudtrail connector" title="All the infrastructure events that happened in one of my applications over the past hour" source="">
 </ArticleImage>
 
 
@@ -54,7 +54,7 @@ Baselime applications are now directly connected to a set of CloudFormation stac
 
 [Streams](https://docs.baselime.io/observability-as-code/reference/streams/#stream) are a way to filter your telemetry data and focus only on a subset of events. If you want to see logs that are impacting a specific user only, you can define a stream that filters for this. Streams work just like queries, but without the calculations (`COUNT`, `P99`, `AVG`, etc.)
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-002/streams.png"}  alt="Baselime streams" title="" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-002/streams.png"}  alt="Baselime streams" title="" source="">
 </ArticleImage>
 
 ### Baselime GitHub Action
@@ -65,7 +65,7 @@ Easily [download the Baselime CLI](https://github.com/Baselime/action-setup-base
 
 With the [Baselime VS-Code extension](https://marketplace.visualstudio.com/items?itemName=Baselime.baselime), never again will you need to guess structure or schema of your telemetry data when you’re working with it. Discoverability is taken care of with powerful snippets and auto-complete capabilities powered by your telemetry data.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-002/snippets.gif"}  alt="Baselime vs-code extension" title="" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-002/snippets.gif"}  alt="Baselime vs-code extension" title="" source="">
 </ArticleImage>
 
 

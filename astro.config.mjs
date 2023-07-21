@@ -10,5 +10,8 @@ export default defineConfig({
   base: '/changelog',
   integrations: [mdx({
     extendMarkdownConfig: true,
-  }), tailwind(), rome(), vue()]
+  }), rome(), vue()],
+  experimental: {
+    viewTransitions: true
+   }
 });

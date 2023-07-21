@@ -13,7 +13,7 @@ tags:
   - product-update
   - changelog
 ---
-import ArticleImage from '../../components/article-image.astro'
+import ArticleImage from '../../components/article-image.vue'
 
 ## Zero-latency OpenTelemetry Tracing
 
@@ -23,7 +23,7 @@ We're excited to announce that you can now trace your Lambda functions with Open
 
 We made logging even better with our [OpenTelemetry Logging library](https://github.com/baselime/lambda-node-opentelemetry#adding-custom-events). Rather than logging, you can now enrich your OTel spans with rich context events. This library is easy to use and feels just like a logger. This enables you to get more detailed insights into your application's behaviour and performance.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-013/logger.png"}  alt="OpenTelemetry Logger" title="Logger for OTel spans" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-013/logger.png"}  alt="OpenTelemetry Logger" title="Logger for OTel spans" source="">
 </ArticleImage>
 
 The above code snippet will add a span event to your traces. This enables you and your team to use OpenTelemetry without drastically changing your processes. 
@@ -36,7 +36,7 @@ We simplified the navigation in the Baselime console some more so finding the in
 
 We made it easy to rehydrate data past your retention period using the Baselime CLI. Retrieve otherwise lost data with just a few simple commands. This feature is handy if you need to analyze data for compliance or auditing purposes.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-013/rehydrate.png"}  alt="Rehydrate CLI command" title="Rehydrate CLI command" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-013/rehydrate.png"}  alt="Rehydrate CLI command" title="Rehydrate CLI command" source="">
 </ArticleImage>
 
 

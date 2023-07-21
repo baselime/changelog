@@ -17,7 +17,7 @@ const backfaceVisibility = plugin(function ({ addUtilities }) {
 	});
 });
 
-module.exports = {
+export default {
 	mode: "jit",
 	content: ["./src/**"],
 	darkMode: "class", // or 'media' or 'class'
@@ -492,5 +492,5 @@ module.exports = {
 		extend: {},
 		animation: ["motion-safe"],
 	},
-	plugins: [require("@tailwindcss/forms"), require("@tailwindcss/line-clamp"), backfaceVisibility],
+	plugins: [require("@tailwindcss/forms"), backfaceVisibility],
 };

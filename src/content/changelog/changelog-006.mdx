@@ -13,7 +13,7 @@ tags:
   - product-update
   - changelog
 ---
-import ArticleImage from '../../components/article-image.astro'
+import ArticleImage from '../../components/article-image.vue'
 
 ## TL;DR
 
@@ -51,7 +51,7 @@ So far, CloudFormation stacks could be used to manually set the boundaries of yo
 
 We've launched automatic service discovery in preview to developers currently on Baselime. Automatic service discovery relies on your services being deployed using CloudFormation, it understands the deployment framework your team uses (CDK, Serverless Framework, SST, etc.) and can isolate telemetry data from each service at ingestion time.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-006/discovered-services.png"}  alt="Discovered services" title="Discovered services" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-006/discovered-services.png"}  alt="Discovered services" title="Discovered services" source="">
 </ArticleImage>
 
 When you run a query from within a service, you're querying data for this service only. It's fast, blazing fast.
@@ -62,7 +62,7 @@ For queries spanning multiple services, you can always query all the telemetry d
 
 No more starting with a blank page. We're building a library of common questions you might have about your serverless architecture. From slow queries to DynamoDB throttles, examples give you a starting point in understanding the emerging behaviour of your systems.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-006/query-examples.png"}  alt="Query examples" title="Baselime Query Examples" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-006/query-examples.png"}  alt="Query examples" title="Baselime Query Examples" source="">
 </ArticleImage>
 
 The query examples are [open-sourced](https://github.com/Baselime/templates). Want to add a new set of examples? Let us know on [Slack](https://join.slack.com/t/baselimecommunity/shared_invite/zt-1hea7g9uu-z69IghjEqPqD4P0rRlEQVw).
@@ -88,7 +88,7 @@ A few things are important to know at first glance when you receive an alert:
 
 We improved our Slack alerts to provide all this information immediately, within Slack, without leaving your current context.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-006/slack-alerts.png"}  alt="Improved Slack alerts" title="Improved Slack alerts" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-006/slack-alerts.png"}  alt="Improved Slack alerts" title="Improved Slack alerts" source="">
 </ArticleImage>
 
 

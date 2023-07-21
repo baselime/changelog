@@ -1,7 +1,8 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
+import { ViewTransitions } from "astro:transitions";
 import { SEO } from "astro-seo";
 import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
@@ -10,19 +11,22 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link
-			rel="icon"
-			type="image/svg+xml"
-			href={import.meta.env.BASE_URL + "favicon.svg"}
-		/>
-		<script defer data-domain="baselime.io" src="https://plausible.io/js/script.tagged-events.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={import.meta.env.BASE_URL + "favicon.svg"}
+    />
+    <script
+      defer
+      data-domain="baselime.io"
+      src="https://plausible.io/js/script.tagged-events.js"></script>
 
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<SEO
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <SEO
       title="Baselime Serverless Observability"
       description="Baselime is the simplest serverless observability solution. Simplify your serverless stack with visibility accross logs, metrics, traces and events. Create alerts, and dashboards with AI. Reduce MTTR, build serverless applications faster, and innovate daily."
       openGraph={{
@@ -30,10 +34,10 @@ const { title } = Astro.props;
           title: "Baselime Serverless Observability",
           type: "website",
           image: "https://baselime.io/changelog/changelog-017.png",
-        }
+        },
       }}
       twitter={{
-        creator: "boristane"
+        creator: "boristane",
       }}
       extend={{
         // extending the default link tags
@@ -42,90 +46,99 @@ const { title } = Astro.props;
         meta: [
           {
             name: "twitter:image",
-            content: "https://pbs.twimg.com/profile_banners/1438368458555772932/1680131493/1500x500",
+            content:
+              "https://pbs.twimg.com/profile_banners/1438368458555772932/1680131493/1500x500",
           },
           { name: "twitter:title", content: "Baselime" },
           { name: "twitter:description", content: "Serverless Observability" },
         ],
       }}
     />
-	</head>
-	<body class="min-h-screen bg-l-g-3">
-		<Header />
-		<div
-			id="submitted"
-			class="w-full items-center justify-center gap-x-6 bg-l-g-3 px-6 py-2.5 sm:px-3.5 hidden"
-		>
-			<p class="text-sm leading-6 text-white">
-				<strong class="font-semibold"
-					>Thanks for signing up to the newsletter! 🎉</strong
-				>
-			</p>
-		</div>
+    <ViewTransitions />
+  </head>
+  <body class="min-h-screen bg-l-g-3" transition:animate="morph">
+    <Header />
+    <div
+      id="submitted"
+      class="w-full items-center justify-center gap-x-6 bg-l-g-3 px-6 py-2.5 sm:px-3.5 hidden"
+    >
+      <p class="text-sm leading-6 text-white">
+        <strong class="font-semibold"
+          >Thanks for signing up to the newsletter! 🎉</strong
+        >
+      </p>
+    </div>
 
-		<div class="mx-6 md:mx-auto md:px-8">
-			<div class="mx-auto flex flex-col items-center">
-				<main class="w-full max-w-4xl my-6 sm:my-16">
-					<div class="h-full max-w-5xl mb-12">
-						<a href={import.meta.env.BASE_URL}>
-							<h1
-								class="mt-4 text-3xl font-semibold tracking-tight text-l-g-10 sm:text-5xl"
-							>
-								Changelog
-							</h1>
-						</a>
-						<h2 class="mt-6 text-base leading-7 text-l-g-8 mb-2">
-							New updates shipped every week.
-						</h2>
-						<div class="flex items-center gap-2 text-l-g-7">
-							<a
-								href="https://console.baselime.io"
-								target="_blank"
-								rel="noopener noreferrer"
-								class={`text-l-a border-b border-transparent hover:border-l-a3 transition w-fit plausible-event-name=GOTO_CONSOLE plausible-event-position=changelog+title plausible-event-cta=${'Subscribe to updates'.replaceAll(' ', '+')}`}
-								>Subscribe to updates</a
-							>
-							<div>•</div>
-							<a
-								href="https://twitter.com/baselimehq"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="text-l-a border-b border-transparent hover:border-l-a3 transition w-fit"
-								>Follow us on Twitter</a
-							>
-						</div>
-					</div>
-					<slot />
-				</main>
-			</div>
-		</div>
-		<Footer />
-	</body>
-	<style is:global>
-		@import url("https://fonts.bunny.net/css?family=poppins:400,500,600,700");
-		@import url("https://fonts.bunny.net/css?family=roboto:400,700|urbanist:500,700");
-		html {
-			font-family: poppins, sans-serif;
-			background-color: #f6f6f6;
-		}
-		code {
-			font-family: roboto;
-		}
-	</style>
+    <div class="mx-6 md:mx-auto md:px-8">
+      <div class="mx-auto flex flex-col items-center">
+        <main class="w-full max-w-4xl my-6 sm:my-16">
+          <div class="h-full max-w-5xl mb-12">
+            <a href={import.meta.env.BASE_URL}>
+              <h1
+                class="mt-4 text-3xl font-semibold tracking-tight text-l-g-10 sm:text-5xl"
+              >
+                Changelog
+              </h1>
+            </a>
+            <h2 class="mt-6 text-base leading-7 text-l-g-8 mb-2">
+              New updates shipped every week.
+            </h2>
+            <div class="flex items-center gap-2 text-l-g-7">
+              <a
+                href="https://console.baselime.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                class={`text-l-a border-b border-transparent hover:border-l-a3 transition w-fit plausible-event-name=GOTO_CONSOLE plausible-event-position=changelog+title plausible-event-cta=${"Subscribe to updates".replaceAll(
+                  " ",
+                  "+"
+                )}`}>Subscribe to updates</a
+              >
+              <div>•</div>
+              <a
+                href="https://twitter.com/baselimehq"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-l-a border-b border-transparent hover:border-l-a3 transition w-fit"
+                >Follow us on Twitter</a
+              >
+            </div>
+          </div>
+          <slot />
+        </main>
+      </div>
+    </div>
+    <Footer />
+    <style is:global>
+      @import url("https://fonts.bunny.net/css?family=poppins:400,500,600,700");
+      @import url("https://fonts.bunny.net/css?family=roboto:400,700|urbanist:500,700");
 
-	<script is:inline>
-		const queryString = window.location.search;
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
 
-		const urlParams = new URLSearchParams(queryString);
-		const status = urlParams.get("status");
-		if (status === "subscribed") {
-			const el = document.querySelector("#submitted");
-			if (el) {
-				el.style.display = "flex";
-				setTimeout(() => {
-					el.style.display = "";
-				}, 4000);
-			}
-		}
-	</script>
+      html {
+        font-family: poppins, sans-serif;
+        background-color: #f6f6f6;
+      }
+      code {
+        font-family: roboto;
+      }
+    </style>
+
+    <script is:inline>
+      const queryString = window.location.search;
+
+      const urlParams = new URLSearchParams(queryString);
+      const status = urlParams.get("status");
+      if (status === "subscribed") {
+        const el = document.querySelector("#submitted");
+        if (el) {
+          el.style.display = "flex";
+          setTimeout(() => {
+            el.style.display = "";
+          }, 4000);
+        }
+      }
+    </script>
+  </body>
 </html>

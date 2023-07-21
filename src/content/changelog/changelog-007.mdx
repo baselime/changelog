@@ -13,7 +13,7 @@ tags:
   - product-update
   - changelog
 ---
-import ArticleImage from '../../components/article-image.astro'
+import ArticleImage from '../../components/article-image.vue'
 
 ## Invocations View
 
@@ -27,7 +27,7 @@ Easily view all the errors for each service or Lambda function on a single scree
 
 With the new Service Health screen, you can get an at-a-glance view of your serverless services' health. It includes key metrics like the number of invocations, number of errors, cold starts, number of alerts triggered, p99 latency and cold starts.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-007/service-health.png"}  alt="Service health" title="Service health" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-007/service-health.png"}  alt="Service health" title="Service health" source="">
 </ArticleImage>
 
 ## **Multi-account and multi-environment support**

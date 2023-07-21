@@ -13,7 +13,7 @@ tags:
   - product-update
   - changelog
 ---
-import ArticleImage from '../../components/article-image.astro'
+import ArticleImage from '../../components/article-image.vue'
 
 ## Proactive Cold Starts
 
@@ -23,14 +23,14 @@ We’ve been closely monitoring AWS cold start behaviour and noticed a new trend
 
 We added a highly requested feature: support for AND / OR filters in your queries. Now, when you have multiple filters in a query, you can choose to combine them with either AND or OR. This enables you to fine-tune your queries and ask your telemetry data a wider range of questions.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-017/and-or-filters.png"}  alt="Baselime filters query builder" title="Baselime filters query builder" source="">
+<ArticleImage client:visible src={import.meta.env.BASE_URL + "changelog-017/and-or-filters.png"}  alt="Baselime filters query builder" title="Baselime filters query builder" source="">
 </ArticleImage>
 
 ## Simplified Inventory Table
 
 We revamped the inventory table to make it more accessible and readable. Initially, it only displayed function latencies and cold starts but now also includes errors, number of invocations, and most recently, their estimated cost. With this simplified table, you can quickly grasp the performance and cost metrics of your functions at a glance.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-017/inventory-table.png"}  alt="Baselime AWS Lambda functions inventory table" title="Baselime AWS Lambda functions inventory table" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-017/inventory-table.png"}  alt="Baselime AWS Lambda functions inventory table" title="Baselime AWS Lambda functions inventory table" source="">
 </ArticleImage>
 
 ## Improvements & Fixes

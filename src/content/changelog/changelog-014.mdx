@@ -13,7 +13,7 @@ tags:
   - product-update
   - changelog
 ---
-import ArticleImage from '../../components/article-image.astro'
+import ArticleImage from '../../components/article-image.vue'
 
 ## Automatic OpenTelemetry Tracing
 
@@ -23,7 +23,7 @@ Baselime now enables you to automatically instrument your Node.js AWS Lambda fun
 
 Are we really a developer tool without GitHub signup? You can now create a Baselime account using your GitHub credentials.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-014/github.png"}  alt="GitHub Signup" title="GitHub Signup" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-014/github.png"}  alt="GitHub Signup" title="GitHub Signup" source="">
 </ArticleImage>
 
 ## Automated Error Surge Notification
@@ -32,7 +32,7 @@ It’s critical for any serverless team to be alerted when the number of errors 
 
 It's why we introduced automated email notifications for error surges. This email has error surges conveniently grouped by services and provides a direct link to the root cause. In the coming weeks, we’ll expand this feature to allow fine-tuning of the sensitivity such that it matches your architecture specifically.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-014/surge.png"}  alt="Automated error surge email" title="Automated error surge email" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-014/surge.png"}  alt="Automated error surge email" title="Automated error surge email" source="">
 </ArticleImage>
 
 ## Improvements & Fixes
@@ -47,5 +47,5 @@ It's why we introduced automated email notifications for error surges. This emai
 - Performance improvements on the X-Ray traces processor
 - Improved the trace waterfall view, with more service icons and better colors
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-014/trace.png"}  alt="Trace waterfall view" title="Trace waterfall view" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-014/trace.png"}  alt="Trace waterfall view" title="Trace waterfall view" source="">
 </ArticleImage>

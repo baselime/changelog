@@ -13,7 +13,7 @@ tags:
   - product-update
   - changelog
 ---
-import ArticleImage from '../../components/article-image.astro'
+import ArticleImage from '../../components/article-image.vue'
 
 ## TL;DR
 
@@ -35,7 +35,7 @@ Buckle up, we’re kicking off the year with a long one. We've shipped a lot ove
 
 They say a picture is worth a thousand words, and a video is worth a thousand pictures. That’s a lot of words to say observability for serverless has never been this easy. Sit back, watch the video and let us know your thoughts!
 
-[<ArticleImage   src={import.meta.env.BASE_URL + "changelog-004/visual-builder.gif"}  alt="Visual Query Builder" title="Visual Query Builder" source="https://www.youtube.com/watch?v=QuLT55XqJsE" sourceCaption="Watch full video">
+[<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-004/visual-builder.gif"}  alt="Visual Query Builder" title="Visual Query Builder" source="https://www.youtube.com/watch?v=QuLT55XqJsE" sourceCaption="Watch full video">
 </ArticleImage>](https://www.youtube.com/watch?v=QuLT55XqJsE)
 
 The visual builder facilitates drafting queries and alerts in the web console. When you're troubleshooting live issues in production, this is a lifesaver. For the more seasoned OaC enthusiasts, you can always revert back to the code editor to write your queries and alerts as code.
@@ -48,7 +48,7 @@ After AWS Lambda logs, CloudTrail logs and API Gateway logs, we're excited to in
 And there's nothing more for you to do. When you connect your AWS Account to Baselime, we deploy all the necessary infrastructure to capture all your CloudWatch metrics and send them to our backend. Once data is ingested, you can run arbitrary queries on any nested field of your metrics (all nested fields are indexed in Baselime).
 
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-004/cloudwatch-metrics.png"}  alt="CloudWatch Metrics connector" title="An example CloudWatch metric in Baselime" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-004/cloudwatch-metrics.png"}  alt="CloudWatch Metrics connector" title="An example CloudWatch metric in Baselime" source="">
 </ArticleImage>
 
 
@@ -56,12 +56,12 @@ And there's nothing more for you to do. When you connect your AWS Account to Bas
 
 Observability as Code (OaC) is great but what's better is automating it as part of your CI/CD pipelines. We've built [integrations with all the major CI/CD providers](https://github.com/Baselime/ci-pipelines) such that you can use the Baselime CLI from anywhere. Running your own DIY CI/CD platform? Don’t worry, we also provide you a Docker image with the Baselime CLI - simply download our [Docker image](https://hub.docker.com/r/baselime/baselime) and you're good to go.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-004/ci-platforms.png"}  alt="Major CI platforms" title="Major CI/CD providers supported" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-004/ci-platforms.png"}  alt="Major CI platforms" title="Major CI/CD providers supported" source="">
 </ArticleImage>
 
 In addition, we have greatly improved our baselime report command. It enables you to send reports on the health of your services to your destinations of choice. Currently, the best supported platform is GitHub, we're working on sending to Slack, webhooks and others. [Hit us up anywhere](https://join.slack.com/t/baselimecommunity/shared_invite/zt-1hea7g9uu-z69IghjEqPqD4P0rRlEQVw) to suggest additional platforms.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-004/github-report.png"}  alt="Report on the health of a service posted to GitHub with the baselime report command" title="Report on the health of a service posted to GitHub with the baselime report command" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-004/github-report.png"}  alt="Report on the health of a service posted to GitHub with the baselime report command" title="Report on the health of a service posted to GitHub with the baselime report command" source="">
 </ArticleImage>
 
 ### Observability Reference Language (ORL)
@@ -74,7 +74,7 @@ The latest improvements to the ORL are [templates](https://docs.baselime.io/obse
 
 Using the baselime templates command, your entire team can create OaC templates which can be used by anyone in your workspace. Don’t forget you can also use any of the public community templates. Once a template is created, you can reference it in the Observability Reference Language of any service. This service will automatically be monitored as defined in the template along with all its queries and alerts.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-004/templates.png"}  alt="Example service definition with templates and variables" title="Example service definition with templates and variables" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-004/templates.png"}  alt="Example service definition with templates and variables" title="Example service definition with templates and variables" source="">
 </ArticleImage>
 
 #### Variables
@@ -92,7 +92,7 @@ We went back to the drawing board. Now most common commands are interactive and 
 
 Moreover, we drastically improved the [docs](https://docs.baselime.io/cli/overview/). Please check it out and let us know your thoughts.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-004/interactive-cli.png"}  alt="Interactive CLI commands" title="Get familiar with all Baselime commands in interactive mode" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-004/interactive-cli.png"}  alt="Interactive CLI commands" title="Get familiar with all Baselime commands in interactive mode" source="">
 </ArticleImage>
 
 ### OAuth Authentication

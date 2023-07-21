@@ -13,7 +13,7 @@ tags:
   - product-update
   - changelog
 ---
-import ArticleImage from '../../components/article-image.astro'
+import ArticleImage from '../../components/article-image.vue'
 
 ## S3 Archival
 
@@ -27,14 +27,14 @@ Keeping track of all your CloudFormation deployments has improved. Baselime now 
 
 We understand that different queries require different levels of granularity. So we added the ability to define the time granularity of your queries. This enables you to get the insights you need, exactly as you need them.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-009/granularity-selector.png"}  alt="Baselime console granularity selector" title="Baselime console granularity selector" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-009/granularity-selector.png"}  alt="Baselime console granularity selector" title="Baselime console granularity selector" source="">
 </ArticleImage>
 
 ## Contextual Dropdowns
 
 We changed key dropdowns in the web console to provide more relevant details and improved clarity. This includes the dataset, operation and operators selectors. This enables you to quickly and easily find the information you need, without any confusion.
 
-<ArticleImage   src={import.meta.env.BASE_URL + "changelog-009/contextual-dropdowns.png"}  alt="Baselime console dataset selector" title="Baselime console dataset selector" source="">
+<ArticleImage client:visible   src={import.meta.env.BASE_URL + "changelog-009/contextual-dropdowns.png"}  alt="Baselime console dataset selector" title="Baselime console dataset selector" source="">
 </ArticleImage>
 
 ## Email Alerts

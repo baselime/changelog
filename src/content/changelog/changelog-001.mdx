@@ -13,7 +13,7 @@ tags:
   - product-update
   - changelog
 ---
-import ArticleImage from '../../components/article-image.astro'
+import ArticleImage from '../../components/article-image.vue'
 
 ## 💯 What’s New?
 
@@ -28,7 +28,7 @@ Typically, observability providers use Slack integrations as sinks where notific
 - Directly link to the Baselime console to dive deeper into your data with a single click
 
 
-<ArticleImage src={import.meta.env.BASE_URL + 'changelog-001/queries.png'}  alt="Slack queries" title="" source="">
+<ArticleImage client:visible src={import.meta.env.BASE_URL + 'changelog-001/queries.png'}  alt="Slack queries" title="" source="">
 </ArticleImage>
 
 ### Templates
@@ -47,7 +47,7 @@ We launched the [Baselime webhooks](https://docs.baselime.io/integrations/webhoo
 - Receive context-rich details about the alert in the webhook payload
 - Be creative and build cool custom processes that trigger when an alert is triggered
 
-<ArticleImage  src={import.meta.env.BASE_URL + "changelog-001/webhooks.png"} alt="Baselime webhooks" title="" source="">
+<ArticleImage client:visible  src={import.meta.env.BASE_URL + "changelog-001/webhooks.png"} alt="Baselime webhooks" title="" source="">
 </ArticleImage>
 
 ### New commands
@@ -61,7 +61,7 @@ We’re continuously improving our CLI and added the following commands:
 
 We know YAML is not the most fun language to write, so we made it easier to write your Observability as Code in the browser. With powerful autocomplete powered with your telemetry data, you won’t have to guess if your events were `event_name` or `eventName` anymore!
 
-<ArticleImage  src={import.meta.env.BASE_URL + "changelog-001/autocomplete.png"}  alt="Autocomplete" title="" source="">
+<ArticleImage client:visible  src={import.meta.env.BASE_URL + "changelog-001/autocomplete.png"}  alt="Autocomplete" title="" source="">
 </ArticleImage>
 
 ## 🎯 What’s Next?
