@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="image">
-            <img :src="src" :alt="alt" class="article-image" @click="handleImageClick" />
+            <img :src="src" :alt="alt" class="article-image cursor-pointer" @click="handleImageClick" />
             <div>
                 {{ title }}
                 <span v-if="source">| <a href="source" target="_blank" rel="noopener noreferrer">source</a></span>
@@ -9,7 +9,7 @@
         </div>
         <div class="image-clicked" v-if="clicked" @click="handleImageClick" >
             <div class="bg-gray-900/[.9] p-64">
-                <img :src="src" :alt="alt" class="rounded-xl hover:border-2 hover:border-[#94d32e]"/>
+                <img :src="src" :alt="alt" class="rounded-xl hover:border-2 hover:border-[#94d32e] cursor-pointer"/>
             </div>
         </div>
     </div>

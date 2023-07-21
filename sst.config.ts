@@ -22,16 +22,18 @@ export default {
 				cdk: {
 					bucket: {
 						websiteIndexDocument: "index.html",
+						websiteErrorDocument: "index.html",
 						publicReadAccess: true,
-						blockPublicAccess: s3.BlockPublicAccess.BLOCK_ACLS
 					},
 				},
 			});
+			bucket.cdk.bucket.grantPublicAccess("*");
 
 			new s3Deploy.BucketDeployment(stack, "deploy-changelog", {
 				sources: [s3Deploy.Source.asset(path.join(__dirname, "dist"))],
 				destinationBucket: bucket.cdk.bucket,
 				destinationKeyPrefix: "changelog",
+				accessControl: s3.BucketAccessControl.PUBLIC_READ,
 			});
 
 			new ssm.StringParameter(this, "changelogUrlParameter", {

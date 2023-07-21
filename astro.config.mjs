@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
-import tailwind from "@astrojs/tailwind";
 import rome from "astro-rome";
 
 import vue from "@astrojs/vue";
@@ -11,7 +10,4 @@ export default defineConfig({
   integrations: [mdx({
     extendMarkdownConfig: true,
   }), rome(), vue()],
-  experimental: {
-    viewTransitions: true
-   }
 });
