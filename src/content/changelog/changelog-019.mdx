@@ -1,0 +1,40 @@
+---
+title: "Changelog #019"
+description: Invocations filters, logs filters, errors timestamps and much more... 
+cover: changelog-019.png
+alt: "Changelog #019"
+featured: true
+date: 2023-08-03
+published: true
+author:
+  id: boris-tane
+  name: Boris Tane
+tags: 
+  - product-update
+  - changelog
+---
+import ArticleImage from '../../components/article-image.vue'
+
+## Invocation Filters
+
+We are introducing a new invocation filter. You can now specify multiple filters, which are applied across all logs emitted by your AWS Lambda function, thereby enabling you to efficiently find all invocations matching the filters. The filters are applied to all the logs and the returned data is the set of invocations for which at least one log entry matches each filter.
+
+This extends your filtering capabilities, making it easier to handle complex scenarios. Say goodbye to manual cross-log matching and enjoy a more streamlined observability process.
+
+## Logs Filters
+
+You can now effortlessly filter logs of a specific AWS Lambda function without having to build a query. Simply navigate to the function screen and apply the desired filters directly. This enhancement simplifies the log filtering process, saving you valuable time and effort.
+
+## First Seen and Last Seen Errors
+
+We have improved the errors tables for both the service and functions screens. Now, you can quickly identify the first and the last times an error was seen within the selected timeframe. This valuable information facilitates error triage, enabling you to pinpoint and resolve issues faster.
+
+<ArticleImage client:visible src={import.meta.env.BASE_URL + "changelog-019/errors.png"}  alt="Errors Table" title="Errors Table" source="">
+</ArticleImage>
+
+## Improvements & Fixes
+
+- Added display of the runtime and other details in the functions and errors table
+- Improved the reliability of the auto-scaling of the ingestion pipelines
+- Further improved the performance and reliability of the X-Ray ingestion
+- Improved the reliability of the backend screenshot capabilities
