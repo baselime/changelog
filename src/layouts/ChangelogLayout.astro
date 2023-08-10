@@ -1,90 +1,99 @@
 ---
 import { CollectionEntry } from "astro:content";
+import ArticleImage from "../components/article-image.vue";
 
 export interface Props {
-    changelog: CollectionEntry<"changelog">;
+  changelog: CollectionEntry<"changelog">;
 }
 
 const { changelog } = Astro.props;
 ---
 
 <div class="changelog">
-    <div class="lg:grid lg:grid-cols-[210px_672px] gap-4  border-t border-l-g-7 max-w-7xl mx-auto px-4 md:px-0 mb-8" style="align-items: start;">
-        <div class=" text-l-g-7 mt-16 lg:sticky lg:top-6 flex-none" style="align-self: start;">
-            <p>{new Date(changelog.data.date).toDateString()}</p>
-        </div>
-        <div class="max-w-5xl flex-none">
-            <a href={import.meta.env.BASE_URL + "slug/" +changelog.slug}>
-                <img
-                    class="rounded-xl cover mt-16"
-                    src={import.meta.env.BASE_URL + changelog.data.cover}
-                    alt="Cover for Changelog"
-                />
-            </a>
-            <slot />
-        </div>
+  <div
+    class="lg:grid lg:grid-cols-[210px_672px] gap-4 border-t border-l-g-7 max-w-7xl mx-auto px-4 md:px-0 mb-8"
+    style="align-items: start;"
+  >
+    <div
+      class="text-l-g-7 mt-16 lg:sticky lg:top-6 flex-none"
+      style="align-self: start;"
+    >
+      <a href={import.meta.env.BASE_URL + "slug/" + changelog.slug} class="hover:border-[#94d32e]">
+        <p>{new Date(changelog.data.date).toDateString()}</p>
+      </a>
     </div>
+    <div class="max-w-5xl flex-none mt-14">
+      <ArticleImage
+        client:visible
+        src={import.meta.env.BASE_URL + changelog.data.cover}
+        alt="Cover for Changelog"
+        title=""
+        source=""
+      />
+      <slot />
+    </div>
+  </div>
 </div>
 
 <style>
-    .changelog :global(h2) {
-        margin: 3rem 0 1.5rem;
-        font-size: 1.4rem;
-        color: #ffffff;
-        font-weight: 600;
-    }
+  .changelog :global(h2) {
+    margin: 3rem 0 1.5rem;
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-weight: 600;
+  }
 
-    .changelog :global(h3) {
-        margin: 1.5rem 0 1rem;
-        font-size: 1.4rem;
-        color: #ffffff;
-        font-weight: 600;
-    }
+  .changelog :global(h3) {
+    margin: 1.5rem 0 1rem;
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-weight: 600;
+  }
 
-    .changelog :global(h4) {
-        margin: 1.5rem 0 1rem;
-        font-size: 1.2rem;
-        color: #ffffff;
-        font-weight: 600;
-    }
+  .changelog :global(h4) {
+    margin: 1.5rem 0 1rem;
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: 600;
+  }
 
-    .changelog :global(p) {
-        margin: 0 0 20px;
-        font-size: 1rem;
-        color: #a7a9b1;
-    }
+  .changelog :global(p) {
+    margin: 0 0 20px;
+    font-size: 1rem;
+    color: #a7a9b1;
+  }
 
-    .changelog :global(a) {
-        text-decoration: none;
-        color: #94d32e;
-        border-bottom: 2px solid transparent;
-        transition: 0.15s;
-    }
+  .changelog :global(a) {
+    text-decoration: none;
+    color: #94d32e;
+    border-bottom: 2px solid transparent;
+    transition: 0.15s;
+  }
 
-    .changelog :global(ul) {
-        list-style-type: circle;
-        margin: 0 0 30px;
-        padding: 0;
-        color: #a7a9b1;
-    }
+  .changelog :global(ul) {
+    list-style-type: circle;
+    margin: 0 0 30px;
+    padding: 0;
+    color: #a7a9b1;
+  }
 
-    .changelog :global(li) {
-        font-size: 1rem;
-        margin: 5px 60px;
-    }
+  .changelog :global(li) {
+    font-size: 1rem;
+    margin: 5px 60px;
+  }
 
-    .changelog :global(code) {
-        color: rgb(208, 214, 224);
-        background:   rgb(28, 29, 31);
-        padding: 2px 4px;
-        border-radius: 4px;
-        font-size: 0.9rem;
-        font-family: "Monaco", monospace;
-    }
+  .changelog :global(code) {
+    color: rgb(208, 214, 224);
+    background: rgb(28, 29, 31);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: "Monaco", monospace;
+  }
 
-    .cover {
-        width: 100%;
-        max-height: 580px;
-        object-fit: cover;
-    }
+  .cover {
+    width: 100%;
+    max-height: 580px;
+    object-fit: cover;
+  }
 </style>
